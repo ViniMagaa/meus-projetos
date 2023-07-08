@@ -1,0 +1,19 @@
+#body {
+    background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+}
+
+.meuNome {
+    color: rgb(233, 98, 98);
+    font-size: 60px;
+    font-weight: 100;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.txtVerde {
+    color: lightgreen;
+}
+
+.txtAzul {
+    color: lightskyblue;
+}
