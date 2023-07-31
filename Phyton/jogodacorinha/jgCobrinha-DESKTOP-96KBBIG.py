@@ -6,9 +6,9 @@ from random import randint
 pygame.init()
 
 pygame.mixer.music.set_volume(0.25)
-musicadefundo = pygame.mixer.music.load('mixkit-swing-is-the-answer-526.mp3')
+musicadefundo = pygame.mixer.music.load('/home/vini/Documentos/Programação/VS CODE/Phyton/jogodacorinha/mixkit-swing-is-the-answer-526.mp3')
 pygame.mixer.music.play(-1)
-somcolisao = pygame.mixer.Sound('smw_kick.wav') 
+somcolisao = pygame.mixer.Sound('/home/vini/Documentos/Programação/VS CODE/Phyton/jogodacorinha/smw_kick.wav') 
 '''é o som'''
 
 largura = 640
