@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senha</title>
+</head>
+<body>
+    <h1>Senha</h1>
+    <label for="senha">
+        Insira a senha: <input type="number" name="senha" id="senha">
+    </label> <br>
+    <input type="submit" value="Entrar" onclick="confirmarSenha()">
+
+    <script>
+        function confirmarSenha() {
+            let senha = Number(document.getElementById('senha').value)
+
+            if(senha == 2002) {
+                alert('Acesso permitido!')
+            } else {
+                alert('Acesso negado. Tente novamente.')
+            }
+        }
+    </script>
+</body>
+</html>

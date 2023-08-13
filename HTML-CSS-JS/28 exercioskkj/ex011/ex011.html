@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>X e Y</title>
+</head>
+<body onload="iniciar()">
+    <h1>Programa Finalizado</h1>
+    <p>Para reiniciar pressione a tecla F5 ou recarregue a página</p>
+
+    <script>
+        function iniciar() {
+            let n1 = Number.parseInt(window.prompt("Digite o primeiro número:"))
+            let n2 = Number.parseInt(window.prompt("Digite o segundo número:"))
+            
+            if(n1 != n2) {
+                let ordem = () => {
+                    if(n1 < n2) {
+                        return 'crescente'
+                    } else {
+                        return 'decrescente'
+                    }
+                }
+
+                alert(`Os valores foram digitados em ordem ${ordem()}.`)
+                iniciar()
+            }
+        }
+    </script>
+</body>
+</html>

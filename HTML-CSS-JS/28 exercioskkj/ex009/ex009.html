@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medidas</title>
+</head>
+<body>
+    <h1>Analisando Medidas</h1>
+    <label for="a">
+        Medida A: <input type="number" name="a" id="a"> cm
+    </label> <br>
+    <label for="b">
+        Medida B: <input type="number" name="b" id="b"> cm
+    </label> <br>
+    <label for="c">
+        Medida C: <input type="number" name="c" id="c"> cm
+    </label> <br>
+    <input type="submit" value="Analisar Medidas" onclick="analisarMedidas()">
+
+    <div id="res">
+        <p id="res-area-quadrado"></p>
+        <p id="res-area-triangulo"></p>
+        <p id="res-area-trapezio"></p>
+    </div>
+
+    <script>
+        function analisarMedidas() {
+            let resAreaQuad = document.getElementById('res-area-quadrado')
+            let resAreaTria = document.getElementById('res-area-triangulo')
+            let resAreaTrap = document.getElementById('res-area-trapezio')
+            let a = Number(document.getElementById('a').value)
+            let b = Number(document.getElementById('b').value)
+            let c = Number(document.getElementById('c').value)
+
+            let areaQuad = Math.pow(a, 2)
+            let areaTria = a * b / 2
+            let areaTrap = (a + b) * c / 2
+
+            resAreaQuad.innerText = `A área do quadrado de lado A é igual a ${areaQuad}cm²`
+            resAreaTria.innerText = `A área do triângulo de base A e altura B é igual a ${areaTria}cm²`
+            resAreaTrap.innerText = `A área do trapézio de bases A e B, e altura C é igual a ${areaTrap}cm²`
+        }
+    </script>
+</body>
+</html>

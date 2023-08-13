@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média Semestral</title>
+</head>
+<body>
+    <h1>Insira as notas</h1>
+    <label for="nota1">
+        Nota 1: <input type="number" name="nota1" id="nota1">
+    </label> <br>
+    <label for="nota2">
+        Nota 2: <input type="number" name="nota2" id="nota2">
+    </label> <br>
+    <input type="submit" value="Calcular Média" onclick="calcularMedia()">
+
+    <p id="res"></p>
+
+    <script>
+        function calcularMedia() {
+            let res = document.getElementById('res')
+            let nota1 = Number(document.getElementById('nota1').value)
+            let nota2 = Number(document.getElementById('nota2').value)
+
+            if(nota1 >= 0 && nota1 <= 10 && nota2 >= 0 && nota2 <= 10) {
+                let media = (nota1 + nota2) / 2
+
+                res.innerText = `A média semestral desse aluno é ${media}`
+            } else {
+                alert('Insira um valor válido para as notas (deve pertencer ao intervalo de 0 a 10)')
+            }
+        }
+    </script>
+</body>
+</html>
