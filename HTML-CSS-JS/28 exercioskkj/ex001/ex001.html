@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terreno</title>
+</head>
+<body>
+    <h1>Cálculo de Terreno</h1>
+    <label for="icomprimento">
+        Comprimento: <input type="number" name="comprimento" id="icomprimento" step=".1">
+    </label> <br>
+    <label for="ilargura">
+        Largura:<input type="number" name="largura" id="ilargura" step=".1">
+    </label> <br>
+    <label for="ivalor-metro-quadrado">
+        Valor do metro quadrado: <input type="number" name="valor-metro-quadrado" id="ivalor-metro-quadrado" step=".1">
+    </label> <br>
+
+    <input type="submit" value="Calcular" onclick="calcular()">
+
+    <div id="result">
+        <p id="area-terreno"></p>
+        <p id="preco-terreno"></p>
+    </div>
+
+    <script>
+        function calcular() {
+            let resArea = document.getElementById('area-terreno')
+            let resPreco = document.getElementById('preco-terreno')
+            let comp = Number(document.getElementById('icomprimento').value)
+            let larg = Number(document.getElementById('ilargura').value)
+            let valMetro = Number(document.getElementById('ivalor-metro-quadrado').value)
+
+            let area = comp * larg
+            let precoTerreno = area * valMetro
+
+            resArea.innerText = `A área do terreno é de ${area.toFixed(2)} metros quadrados`
+            resPreco.innerText = `O valor do terreno é de R$ ${precoTerreno.toFixed(2)}`
+        }
+    </script>
+</body>
+</html>

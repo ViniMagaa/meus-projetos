@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pessoas</title>
+</head>
+<body>
+    <h1>Pessoas legais</h1>
+    <fieldset>
+        <legend>Pessoa 1</legend>
+        <label for="nome1">
+            Nome: <input type="text" name="" id="nome1">
+        </label> <br>
+        <label for="idade1">
+            Idade: <input type="text" name="" id="idade1">
+        </label>
+    </fieldset>
+    <fieldset>
+        <legend>Pessoa 2</legend>
+        <label for="nome2">
+            Nome: <input type="text" name="" id="nome2">
+        </label> <br>
+        <label for="idade2">
+            Idade: <input type="text" name="" id="idade2">
+        </label>
+    </fieldset>
+
+    <input type="submit" value="Clique para ver algo legal" onclick="algoLegal()">
+
+    <p id="res"></p>
+
+    <script>
+        function algoLegal() {
+            let res = document.getElementById('res')
+            let nome1 = document.getElementById('nome1').value
+            let idade1 = Number(document.getElementById('idade1').value)
+            let nome2 = document.getElementById('nome2').value
+            let idade2 = Number(document.getElementById('idade2').value)
+
+            let mediaIdades = (idade1 + idade2) / 2
+
+            res.innerText = `A média de idades de ${nome1} e ${nome2} é de ${mediaIdades} anos.`
+        }
+    </script>
+</body>
+</html>
