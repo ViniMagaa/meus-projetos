@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carros e Combustíveis</title>
+</head>
+<body>
+    <h1>Consumo médio de combustível</h1>
+    <label for="dist">
+        Distância total (em km): <input type="number" name="dist" id="dist">
+    </label> <br>
+    <label for="conbust-consum">
+        Total de combustível consumido (em litros): <input type="number" name="combust-consum" id="combust-consum">
+    </label> <br>
+    <input type="submit" value="Calcular consumo médio" onclick="calcularConsumoMedio()">
+
+    <p id="res"></p>
+
+    <script>
+        function calcularConsumoMedio() {
+            let res = document.getElementById('res')
+            let dist = Number(document.getElementById('dist').value)
+            let combustConsum = Number(document.getElementById('combust-consum').value)
+
+            let consumMedio = combustConsum / dist
+
+            res.innerText = `O carro consumiu, em média, ${consumMedio} litros por km`
+        }
+    </script>
+</body>
+</html>

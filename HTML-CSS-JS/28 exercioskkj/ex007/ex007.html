@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcionário</title>
+</head>
+<body>
+    <h1>Funcionários e Salários</h1>
+    <label for="nome">
+        Nome: <input type="text" name="nome" id="nome">
+    </label> <br>
+    <label for="valor-hora">
+        Valor da hora: <input type="number" name="valor-hora" id="valor-hora">
+    </label> <br>
+    <label for="horas-de-trabalho">
+        Quantas horas trabalha (por dia): <input type="number" name="horas-de-trabalho" id="horas-de-trabalho">
+    </label> <br>
+    <input type="submit" value="Calcular Salário" onclick="calcularSalario()">
+
+    <div id="res"></div>
+
+    <script>
+        function calcularSalario() {
+            let res = document.getElementById('res')
+            let nome = document.getElementById('nome').value
+            let valorHora = Number(document.getElementById('valor-hora').value)
+            let qtHoras = Number(document.getElementById('horas-de-trabalho').value)
+
+            let salario = 20 * valorHora * qtHoras
+
+            res.innerHTML += `<p>O salário de ${nome} é de R$ ${salario.toFixed(2)}</p>`
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trocos</title>
+</head>
+<body>
+    <h1>Calculando Trocos</h1>
+    <label for="preco-unitario">
+        Preço Unitário: <input type="number" name="preco-unitario" id="preco-unitario">
+    </label> <br>
+    <label for="quant-unidades">
+        Quantidade de Unidades Compradas: <input type="number" name="quant-unidades" id="quant-unidades">
+    </label> <br>
+    <label for="valor-dado">
+        Valor Dado pelo Cliente: <input type="number" name="valor-dado" id="valor-dado">
+    </label> <br>
+    <input type="submit" value="Calcular Troco" onclick="calcularTroco()">
+
+    <p id="res"></p>
+
+    <script>
+        function calcularTroco() {
+            let res = document.getElementById('res')
+            let precoUnit = Number(document.getElementById('preco-unitario').value)
+            let quantUnid = Number(document.getElementById('quant-unidades').value)
+            let valorDado = Number(document.getElementById('valor-dado').value)
+            
+            let troco = valorDado - (precoUnit * quantUnid)
+
+            res.innerText = `O troco é de R$ ${troco.toFixed(2)}`
+        }
+    </script>
+</body>
+</html>

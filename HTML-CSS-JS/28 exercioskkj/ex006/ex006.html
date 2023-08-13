@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Círculos</title>
+</head>
+<body>
+    <h1>Analisando Círculos</h1>
+    <label for="raio">
+        Raio do Círculo: <input type="number" name="raio" id="raio">
+    </label> <br>
+    <input type="submit" value="Analisar" onclick="analisar()">
+
+    <p id="res"></p>
+
+    <script>
+        function analisar() {
+            let res = document.getElementById('res')
+            let raio = Number(document.getElementById('raio').value)
+
+            let area = Math.PI * Math.pow(raio, 2)
+
+            res.innerText = `A área do círculo é ${area.toFixed(3)}cm²`
+        }
+    </script>
+</body>
+</html>
