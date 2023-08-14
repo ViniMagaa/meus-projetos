@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Ímpares</title>
+</head>
+<body>
+    <h1>Soma de Números Ímpares</h1>
+    <label for="num1">
+        Número 1: <input type="number" name="num1" id="num1">
+    </label> <br>
+    <label for="num2">
+        Número 2: <input type="number" name="num2" id="num2">
+    </label> <br>
+    <input type="submit" value="Somar Nº Ímpares" onclick="somarNumerosImpares()">
+
+    <p id="res"></p>
+
+    <script>
+        function somarNumerosImpares() {
+            let res = document.getElementById('res')
+            let n1 = Number(document.getElementById('num1').value)
+            let n2 = Number(document.getElementById('num2').value)
+            let soma = 0
+
+            if(n1 == n2) {
+                alert('Os números são iguais. Por isso, é impossível calcular a soma dos números impares entre eles. Tente novamente com outros valores.')
+                return
+            } else {
+                if(n1 < n2) { // ordem crescente
+                    if(n1 % 2 == 0) { //primeiro numero par
+                        for(let i = n1 + 1; i <= n2; i+=2) {
+                            soma += i;
+                        }
+                    } else { //primeiro numero impar
+                        for(let i = n1; i <= n2; i+=2) {
+                            soma += i;
+                        }
+                    }
+                    res.innerText = `A soma dos números inteiros entre ${n1} e ${n2} é ${soma}`
+                } else { // ordem decrescente
+                    if(n2 % 2 == 0) { //primeiro numero par
+                        for(let i = n2 + 1; i <= n1; i+=2) {
+                            soma += i;
+                        }
+                    } else { //primeiro numero impar
+                        for(let i = n2; i <= n1; i+=2) {
+                            soma += i;
+                        }
+                    }
+                    res.innerText = `A soma dos números inteiros entre ${n2} e ${n1} é ${soma}`
+                }
+            }
+        }
+    </script>
+</body>
+</html>

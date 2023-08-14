@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+<body>
+    <h1>Tabuada</h1>
+    <label for="num">
+        Número: <input type="number" name="num" id="num">
+    </label> <br>
+    <input type="submit" value="Calcular" onclick="calcular()">
+
+    <div id="res" style="display: center;"></div>
+
+    <script>
+        function calcular() {
+            let res = document.getElementById('res')
+            let num = Number(document.getElementById('num').value)
+
+            for(let i = 1; i <= 10; i++) {
+                res.innerHTML += `<p>${i} x ${num} = ${i * num}</p>`
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Ímpares</title>
+</head>
+<body>
+    <h1>Nº ímpares de 1 até X</h1>
+    <label for="num">
+        Número: <input type="number" name="num" id="num" min="1">
+    </label> <br>
+    <input type="submit" value="Calcular" onclick="calcular()">
+
+    <div id="res"></div>
+
+    <script>
+        function calcular() {
+            let res = document.getElementById('res')
+            //limpar resultado
+            res.innerHTML = ''
+            let num = Math.abs(Number(document.getElementById('num').value))
+
+            for(let i = 1; i <= num; i+=2) {
+                res.innerHTML += `<p>${i}</p>`
+            }
+        }
+    </script>
+</body>
+</html>
