@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-r">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números</title>
+</head>
+<body onload="inicio()">
+    <h1>Números entre 10 e 20</h1>
+    <p id="res"></p>
+
+    <script>
+        function inicio() {
+            let qtValores = Number.parseInt(prompt("Quantos número você vai digitar a seguir?"))
+            let numeros = []
+            let nDentro = 0
+            let nFora = 0
+
+            for (let i = 0; i < qtValores; i++) {
+                numeros[i] = Number(prompt("Digite:"))
+                
+                if(numeros[i] >= 10 && numeros[i] <= 20) {
+                    nDentro++
+                } else {
+                    nFora++
+                }
+            }
+
+            let resQtDentro = document.getElementById('res')
+            resQtDentro.innerText = `Desses ${qtValores} números, ${nDentro} estão dentro do intervalo de 10 a 20 e ${nFora} estão fora.`
+        }
+    </script>
+</body>
+</html>
