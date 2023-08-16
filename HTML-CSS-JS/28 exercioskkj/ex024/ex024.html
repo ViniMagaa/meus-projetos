@@ -26,10 +26,16 @@
             let precoUnit = Number(document.getElementById('preco-unitario').value)
             let quantUnid = Number(document.getElementById('quant-unidades').value)
             let valorDado = Number(document.getElementById('valor-dado').value)
-            
-            let troco = valorDado - (precoUnit * quantUnid)
 
-            res.innerText = `O troco é de R$ ${troco.toFixed(2)}.`
+            let precoCompra = precoUnit * quantUnid
+            
+            if (valorDado >= precoCompra) {
+                let troco = valorDado - precoCompra
+                res.innerText = `O troco é de R$ ${troco.toFixed(2)}`
+            } else {
+                let valorFalta = precoCompra - valorDado
+                res.innerHTML = `<strong>[ERRO] Valor dado insuficiente. Faltam R$ ${valorFalta.toFixed(2)}.</strong>`
+            }
         }
     </script>
 </body>

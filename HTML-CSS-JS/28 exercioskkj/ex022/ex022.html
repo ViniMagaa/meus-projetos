@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 números</title>
+</head>
+<body>
+    <h1>Analisando três números</h1>
+    <label for="n1">
+        Primeiro Número: <input type="number" name="n1" id="n1">
+    </label> <br>
+    <label for="n2">
+        Segundo Número: <input type="number" name="n2" id="n2">
+    </label> <br>
+    <label for="n3">
+        Terceiro Número: <input type="number" name="n3" id="n3">
+    </label> <br>
+    <input type="submit" value="Analisar" onclick="analisar()">
+
+    <p id="res"></p>
+
+    <script>
+        function analisar() {
+            let res = document.getElementById('res')
+            let n1 = Number(document.getElementById('n1').value)
+            let maior = n1
+
+            n2 = Number(document.getElementById('n2').value)
+            if (n2 > maior) {
+                maior = n2
+            }
+
+            n3 = Number(document.getElementById('n3').value)
+            if (n3 > maior) {
+                maior = n3
+            }
+            
+            res.innerHTML = `<p>O número <strong>${maior}</strong> é o maior</p>`
+
+            /*
+            if (n1 > n2 && n1 > n3) {
+                numMaior = n1
+            } else if (n2 > n1 && n2 > n3) {
+                numMaior = n2
+            } else if (n3 > n1 && n3 > n1) {
+                numMaior = n3
+            } else {
+                numMaior = n1
+            }
+            */
+        }
+    </script>
+</body>
+</html>

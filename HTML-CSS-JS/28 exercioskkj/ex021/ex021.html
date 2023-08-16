@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divisões</title>
+</head>
+<body>
+    <h1>Realizando divisões</h1>
+    <label for="n1">
+        Primeiro Número: <input type="number" name="n1" id="n1">
+    </label> <br>
+    <label for="n2">
+        Segundo Número: <input type="number" name="n2" id="n2">
+    </label> <br>
+    <input type="submit" value="Dividir" onclick="dividir()">
+
+    <p id="res"></p>
+
+    <script>
+        function dividir() {
+            let res = document.getElementById('res')
+            let n1 = Number(document.getElementById('n1').value)
+            let n2 = Number(document.getElementById('n2').value)
+
+            if(isNum(n1, n2)) {
+                let resultadoDivisao = n1 / n2
+                res.innerText = `A divisão de ${n1} por ${n2} é igual a ${resultadoDivisao}.`
+            } else {
+                alert('Impossível calcular com esse valores')
+            }
+        }
+
+        function isNum(n1, n2) {
+            if (n1 != 0 && n2 != 0) {
+                return true
+            } else {
+                return false
+            }
+        }
+    </script>
+</body>
+</html>

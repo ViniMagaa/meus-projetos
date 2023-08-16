@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laricel</title>
+</head>
+<body>
+    <h1>Cobrança de plano telefônico</h1>
+    <label for="min">
+        Quantos minutos você consumiu: <input type="number" name="min" id="min">
+    </label> <br>
+    <input type="submit" value="Calcular" onclick="calcular()">
+
+    <p id="res"></p>
+
+    <script>
+        function calcular() {
+            let res = document.getElementById('res')
+            let min = Number(document.getElementById('min').value)
+            let valor = 50
+
+            if (min > 100) {
+                valor += 2 * (min - 100)
+            }
+
+            res.innerHTML = `Você deve pagar um total de <strong>R$ ${valor.toFixed(2)}</strong>.`
+        }
+    </script>
+</body>
+</html>
