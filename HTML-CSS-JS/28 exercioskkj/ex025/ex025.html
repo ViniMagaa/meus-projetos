@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glicose</title>
+</head>
+<body>
+    <h1>Calculando nível de Glicose</h1>
+    <p>Caso queira conferir diretamente na tabela clique <button onclick="verTabela()">AQUI</button></p>
+    <table id="tabela" style="display:none">
+        <caption>Tabela de Nível de Glicose</caption>
+        <tr>
+            <th>Classificação</th>
+            <th>Nível (mg/dl)</th>
+        </tr>
+        <tr>
+            <td>Normal</td>
+            <td>Até 100 mg/dl</td>
+        </tr>
+        <tr>
+            <td>Elevado</td>
+            <td>Maior que 100 até 140 mg/dl</td>
+        </tr>
+        <tr>
+            <td>Diabetes</td>
+            <td>Maior que 140 mg/dl</td>
+        </tr>
+    </table>
+    <br>
+    <label for="glicose">
+        Glicose: <input type="number" name="glicose" id="glicose">
+    </label> <br>
+    <input type="submit" value="Calcular" onclick="calcular()">
+
+    <p id="res"></p>
+
+    <script>
+        function verTabela() {
+            let tabela = document.getElementById('tabela')
+            if (tabela.style.display == 'none') {
+                tabela.style.display = 'block'
+            } else {
+                tabela.style.display = 'none'
+            }
+        }
+
+        function calcular() {
+            let res = document.getElementById('res')
+            let glicose = Number(document.getElementById('glicose').value)
+
+            if(glicose <= 0) {
+                alert('Tem certeza que essa é a quantidade de glicose em seu sangue?')
+            } else {
+                if (glicose <= 100) {
+                    res.innerHTML = `Seu nível de glicose está <strong>NORMAL</strong>`
+                } else if (glicose <= 140) {
+                    res.innerHTML = `Seu nível de glicose está <strong>ELEVADO</strong>`
+                } else {
+                    res.innerHTML = `Você está com <strong>DIABETES</strong>`
+                }
+            }
+        }
+    </script>
+</body>
+</html>

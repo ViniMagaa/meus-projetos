@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Início e Término</title>
+</head>
+<body>
+    <h1>Calcular Duração de um Jogo</h1>
+    <label for="ini">
+        Hora de Início <input type="number" name="ini" id="ini">
+    </label> <br>
+    <label for="fim">
+        Hora de Término: <input type="number" name="fim" id="fim">
+    </label> <br>
+    <input type="submit" value="Calcular Duração" onclick="calcularDuracao()">
+
+    <p id="res"></p>
+
+    <script>
+        function calcularDuracao() {
+            let res = document.getElementById('res')
+            let ini = document.getElementById('ini')
+            let fim = document.getElementById('fim')
+            let durac = 0
+
+            let i = parseInt(ini.value)
+            let f = parseInt(fim.value)
+
+            if (ini.value.length == 0 || fim.value.length == 0) {
+                alert('[ERRO] Faltam valores!')
+            } else if (i < 1 || i > 24 || f < 1 || f > 24) {
+                alert('[ERRO] Valores inválidos para hora')
+            } else {
+                if (i < f) {
+                    durac = f - i
+                } else {
+                    durac = f + 24 - i
+                }
+                
+                res.innerHTML = `O jogo durou ${durac} hora(s).`
+            }
+        }
+    </script>
+</body>
+</html>

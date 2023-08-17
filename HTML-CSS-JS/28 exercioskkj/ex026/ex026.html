@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dardos</title>
+</head>
+<body>
+    <h1>Distâncias entre Lançamentos de Dardos</h1>
+    <label for="lanc1">
+        Lançamento 1: <input type="number" name="lanc1" id="lanc1"> metros
+    </label> <br>
+    <label for="lanc2">
+        Lançamento 2: <input type="number" name="lanc2" id="lanc2"> metros
+    </label> <br>
+    <label for="lanc3">
+        Lançamento 3: <input type="number" name="lanc3" id="lanc3"> metros
+    </label> <br>
+    <input type="submit" value="Calcular Maior" onclick="calcular()">
+
+    <p id="res"></p>
+
+    <script>
+        function calcular() {
+            let res = document.getElementById('res')
+            let lanc1 = Number(document.getElementById('lanc1').value)
+            let lanc2 = Number(document.getElementById('lanc2').value)
+            let lanc3 = Number(document.getElementById('lanc3').value)
+            let maior = 0
+            let dardoLanc = 0
+            let lancamentos = [lanc1, lanc2, lanc3]
+
+            for (let i = 0; i < lancamentos.length; i++) {
+                if (lancamentos[i] > maior) {
+                    maior = lancamentos[i]
+                    dardoLanc = i+1
+                }
+            }
+
+            res.innerHTML = `O dardo lançado mais longe foi o de número ${dardoLanc} com distância de ${maior} metros.`
+        }
+    </script>
+</body>
+</html>

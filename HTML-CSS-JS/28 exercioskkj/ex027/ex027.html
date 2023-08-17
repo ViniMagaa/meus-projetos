@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aumento de Salário</title>
+</head>
+<body>
+    <h1>Cálculo de Aumento de Salário</h1>
+    <p>Caso queira conferir diretamente na tabela clique <button onclick="verTabela()">AQUI</button></p>
+    <table id="tabela" style="display:none">
+        <caption>Tabela de Nível de Aumento</caption>
+        <tr>
+            <th>Salário Anterior</th>
+            <th>Aumento</th>
+        </tr>
+        <tr>
+            <td>Até R$ 1000,00</td>
+            <td>+20%</td>
+        </tr>
+        <tr>
+            <td>Acima de R$ 1000,00 até R$ 3000,00</td>
+            <td>+15%</td>
+        </tr>
+        <tr>
+            <td>Acima de R$ 3000,00 até R$ 8000,00</td>
+            <td>+10%</td>
+        </tr>
+        <tr>
+            <td>Acima de R$ 8000,00</td>
+            <td>+5%</td>
+        </tr>
+    </table>
+    <br>
+    <label for="salAtual">
+        Digite seu salário atual: <input type="number" name="salAtual" id="salAtual">
+    </label> <br>
+    <input type="submit" value="Calcular Aumento" onclick="calcularAumento()">
+
+    <p id="res"></p>
+
+    <script>
+        function verTabela() {
+            let tabela = document.getElementById('tabela')
+            if (tabela.style.display == 'none') {
+                tabela.style.display = 'block'
+            } else {
+                tabela.style.display = 'none'
+            }
+        }
+
+        function calcularAumento() {
+            let res = document.getElementById('res')
+            let salAtual = Number(document.getElementById('salAtual').value)
+            let aumento = 0
+
+            if(salAtual <= 1000) {
+                aumento = 20
+            } else if (salAtual <= 3000) {
+                aumento = 15
+            } else if (salAtual <= 8000) {
+                aumento = 10
+            } else if (salAtual > 8000) {
+                aumento = 5
+            }
+
+            let salNovo = salAtual + (salAtual / 100 * aumento)
+
+            res.innerHTML = `O seu novo salário será <strong>R$ ${salNovo.toFixed(2)}</strong>. O aumento foi de +${aumento}%.`
+        }
+    </script>
+</body>
+</html>
