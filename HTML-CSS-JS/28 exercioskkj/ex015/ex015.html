@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt--br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combustível Preferido</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body onload="carregar()">
+    <h1>Tipo de Combustível Preferido pelos Clientes</h1>
+    <p id="res"></p>
+    <br><br><br>
+    <h3>Obrigado! Volte Sempre</h3>
+
+    <script>
+        function carregar() {
+            let res = document.getElementById('res')
+            let alcool = 0
+            let gasolina = 0
+            let diesel = 0
+
+            let tipo = 0
+
+            do {
+                tipo = parseInt(prompt('Digite o número do combustível escolhido: [1]Álcool [2]Gasolina [3]Diesel [4]Sair'))
+                if (tipo != 4) {
+                    switch(tipo) {
+                        case 1:
+                            alcool++
+                            break
+                        case 2:
+                            gasolina++
+                            break
+                        case 3:
+                            diesel++
+                            break
+                        default:
+                            alert('Digite um valor válido')
+                            break
+                    }
+                }
+            } while(tipo != 4)
+
+            res.innerHTML += `<p>Álcool: ${alcool}</p>`
+            res.innerHTML += `<p>Gasolina: ${gasolina}</p>`
+            res.innerHTML += `<p>Diesel: ${diesel}</p>`
+        }
+    </script>
+</body>
+</html>

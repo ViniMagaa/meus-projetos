@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Durações</title>
+</head>
+<body>
+    <label for="seg">
+        Digite a duração em segundos: <input type="number" name="duracao" id="duracao">
+    </label> <br>
+    <input type="submit" value="Calcular Duração" onclick="calcular()">
+
+    <p id="res"></p>
+
+    <script>
+        function calcular() {
+            let res = document.getElementById('res')
+            let duracao = Number(document.getElementById('duracao').value)
+
+            if(isValidNumber(duracao)) {
+                let horas = duracao / 3600
+                duracao %= 3600
+                let minutos = duracao / 60
+                let segundos = duracao % 60
+
+                horas = horas.toFixed(0).toString().padStart(2, '0')
+                minutos = minutos.toFixed(0).toString().padStart(2, '0')
+                segundos = segundos.toFixed(0).toString().padStart(2, '0')
+
+                res.innerHTML = `A duração é ${horas + ':'}${minutos + ':'}${segundos}`
+            } else {
+                alert('Deve ser um valor válido diferente de zero')
+            }
+        }
+
+        function isValidNumber(n) {
+            if(n != 0 || n > 0) {
+                return true
+            } else {
+                return false
+            }
+        }
+    </script>
+</body>
+</html>
