@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DANIZINHAAA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="container">
+        <header>
+            <h1 class="nome-mae">DANI</h1>
+            <p>Esse projeto é visado a Dani</p>
+            <p>Caso queira conversar com outras mães, clique nos links abaixo</p>
+        </header>
+        <ul class="lista-maes">
+            <h3>Nossas mães</h3>
+            <li><a href="index.html">SUSE</a></li>
+            <li><a href="dani.html">Dani</a></li>
+            <li><a href="mimi.html">MICHEly</a></li>
+        </ul>
+        <div class="img">
+            <h2>Veja uma imagem da dani</h2>
+            <img src="http://placekitten.com/201/201">
+        </div>
+        <div class="colocar-nome">
+            <h2>Converse com ela!</h2>
+            <label for="nome">Digite seu nome:</label>
+            <input type="text" name="nome" id="nome" placeholder="Seu nome" autocomplete="off">
+            <input type="submit" value="Clique aqui!" onclick="chatMae('dani')">
+        </div>
+        <div class="chat">
+            <h2>Chat online com Dani007_019</h2>
+            <hr>
+            <div class="msgs"></div>
+            <hr>
+            <div class="escrever-msg">
+                <input type="text" name="mensagem-usu" id="mensagem-usu" placeholder="Escreva sua mensagem...">
+                <input type="submit" value="➡" onclick="mandarMsg()">
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
