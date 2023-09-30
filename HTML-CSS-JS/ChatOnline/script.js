@@ -92,6 +92,7 @@ function mandarMsg() {
 			<p class="msg-usu">${mensagem.value}</p>
 		</div>`;
 		mensagem.value = "";
+		mensagem.focus()
 	} else {
 		return;
 	}
