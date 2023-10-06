@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1679672199 source:c:\users\primeiroano\desktop\tpa\programinha\programinha\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1680277288 
+
+1680270802 source:e:\vini\tpa\programinha\programinha\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1680277288 source:e:\vini\tpa\programinha quiz naruto\programinha\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+
+1681562820 source:/media/vini/NIVALD/vini/tpa/programinha quiz naruto/programinha/main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+

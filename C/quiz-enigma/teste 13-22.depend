@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1684509994 source:d:\vini\tpa\teste 13-22\teste 13-22\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+

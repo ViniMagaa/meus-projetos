@@ -1,0 +1,184 @@
+
+:root {
+    --vermelho: rgb(116, 20, 20);
+    --vermelho-claro: rgb(159, 39, 39);
+    --amarelo: rgb(242, 242, 95);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.red {
+    color: white;
+    background-color: var(--vermelho);
+    padding: 20px;
+}
+
+section#first-section #container-img-h1 {
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+}
+
+header#menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+    margin: auto;
+    padding: 15px;
+    background-color: var(--vermelho-claro);
+    border-radius: 5px;
+}
+
+#menu ul {
+    display: none;
+    gap: 5px;
+}
+
+#menu ul li {
+    list-style: none;
+}
+
+#menu ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color .1s ease-in-out;
+    border-radius: 5px;
+}
+
+#menu ul li a:hover {
+    background-color: var(--vermelho);
+}
+
+#search {
+    display: flex;
+    width: 80%;
+}
+
+#search input[type="search"] {
+    color: white;
+    border: none;
+    background-color: var(--vermelho-claro);
+    width: 100%;
+}
+
+#search input[type="search"]::placeholder {
+    color: white;
+}
+
+#search input[type="search"]:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+#search button {
+    background: transparent;
+    background-size: contain;
+    width: 20px;
+    border: none;
+    color: white;
+}
+
+#menu span#hamburguer, #search button {
+    cursor: pointer;
+    transition: transform .1s ease-in-out;
+}
+
+#menu span#hamburguer:hover, #search button:hover {
+    transform: scale(1.1);
+}
+
+#container-img-h1 img {
+    display: none;
+}
+
+#title {
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    width: 100vw;
+    margin: 30px;
+}
+
+#title h1 {
+    font-size: 10vw;
+    font-weight: 1000;
+}
+
+#title p {
+    font-size: 3.5vw;
+    color: var(--amarelo);
+}
+
+#title a {
+    font-weight: normal;
+    color: var(--amarelo);
+    text-decoration: underline;
+    transition: font-weight .1s ease-in-out;
+}
+
+#title a:hover {
+    font-weight: 700;
+}
+
+.yellow {
+    background-color: var(--amarelo);
+    color: var(--vermelho);
+    padding: 20px;
+}
+
+#nossos-lanches h2 {
+    font-size: 5vh;
+    margin-bottom: 20px;
+}
+
+.container-lanches {
+    margin: auto;
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.container-lanche-individual {
+    padding: 10px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.151);
+    cursor: pointer;
+    transition: all .15s ease-in-out;
+}
+
+.container-lanche-individual:hover {
+    filter: brightness(92%);
+    transform: scale(1.05);
+}
+
+.lanches {
+    width: 250px;
+    height: 250px;
+    margin: auto;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#lanche1 { background-image: url(../imgs/lanches/lanche1.png); }
+#lanche2 { background-image: url(../imgs/lanches/lanche2.png); }
+#lanche3 { background-image: url(../imgs/lanches/lanche3.png); }
+#lanche4 { background-image: url(../imgs/lanches/lanche4.png); }
+#lanche5 { background-image: url(../imgs/lanches/lanche5.png); }
+#lanche6 { background-image: url(../imgs/lanches/lanche6.png); }
+
+footer.red {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+}

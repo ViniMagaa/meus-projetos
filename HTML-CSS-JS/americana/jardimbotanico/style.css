@@ -1,0 +1,158 @@
+:root {
+    --vermelhoamericana1: #e4434b;
+    --vermelhoamericana2: #e60f19;
+    --vermelhoamericana3: #5f1b1e;
+    --azulamericana1: #285ebb;
+    --azulamericana2: #379cd6;
+    --azulamericana3: #3241ce;
+    --verde: #60af31;
+    --verdeclaro: #b5f591;
+    --verdeescuro: #478026;
+    --verdebemescuro: #1d4127;
+    --cinza: rgb(78, 78, 78);
+    --sombrapreta: rgba(44, 44, 44, 0.2);
+}
+
+
+body {
+    margin: 0;
+    background-color: var(--azulamericana2);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    height: fit-content;
+}
+
+#banner {
+    width: 100%;
+    border-radius: 0px;
+    display: grid;
+}
+
+nav {
+    background-color: var(--vermelhoamericana2);
+    box-shadow: var(--sombrapreta) 0px 8px 20px;
+}
+
+ul {
+	list-style: none;
+	display: flex;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	position: relative;
+}
+
+li:hover > ul {
+	display: block;
+}
+
+ul ul {
+	display: none;
+	position: absolute;
+	background-color: var(--vermelhoamericana2);
+    left: 20%;
+}
+
+nav a {
+	display: inline-block;
+	text-decoration: none;
+	color: white;
+    padding: 10px;
+}
+
+nav a:hover {
+	background-color: var(--vermelhoamericana1);
+}
+
+li {
+    float: left;
+}
+
+li > a {
+    display: inline-block;
+    color: white;
+    text-align: start;
+    text-decoration: none;
+}
+
+#active {
+    background-color: var(--vermelhoamericana3);
+}
+
+main {
+    max-width: 800px;
+    background-color: white;
+    padding: 10px 10px 10px 10px;
+    border: 0;
+    border-radius: 0px 0px 15px 15px;
+    margin: auto;
+    box-shadow: var(--sombrapreta) 0px 8px 20px;
+}
+
+section {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    font-size: 80px;
+    margin: 10px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 50px;
+    margin: 0px 0px 20px 0px;
+    color: var(--verdebemescuro);
+    text-shadow: 2px 2px 5px var(--sombrapreta);
+}
+
+h3 {
+    margin: 0px 0px 10px 0px;
+    color: var(--verdeescuro);
+    text-shadow: 2px 2px 5px var(--sombrapreta);
+}
+
+#apresentacao > p {
+    max-width: 95%;
+    margin: auto;
+    text-indent: 20px;
+    text-align: justify;
+}
+
+div > p {
+    margin-top: 7px;
+}
+
+#div-img-link {
+    text-align: center;
+    margin: auto;
+    display: inline-block;
+}
+
+img {
+    border-radius: 15px;
+    text-align: center;
+}
+
+.clique {
+    transition: 0.1s;
+}
+
+.clique:hover {
+    filter: brightness(70%);
+}
+
+footer {
+    color: white;
+    background-color: var(--azulamericana3);
+    margin-top: 20px;
+    text-align: center;
+    padding: 4px;
+    box-shadow: var(--sombrapreta) 0px 8px 20px;
+}

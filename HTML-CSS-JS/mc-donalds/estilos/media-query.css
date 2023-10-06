@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+@media screen and (min-width: 600px) {
+    #menu ul {
+        display: flex;
+    }
+
+    #search {
+        width: 50%;
+    }
+
+    #menu span#hamburguer {
+        display: none;
+    }
+
+    #container-img-h1 img {
+        display: block;
+        width: 45%;
+        transform: translateX(-25%);
+    }
+
+    #title {
+        text-align: right;
+    }
+
+    #title h1 {
+        font-size: 6vw;
+    }
+}

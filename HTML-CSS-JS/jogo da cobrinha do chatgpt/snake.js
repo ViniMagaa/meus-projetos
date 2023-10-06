@@ -1,5 +1,5 @@
 const display = document.getElementById("display");
-const buttons = document.querySelectorAll("button");
+const buttons = document.querySelectorAll(".button");
 
 let num1 = "";
 let num2 = "";
