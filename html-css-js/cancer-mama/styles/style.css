@@ -1,0 +1,190 @@
+@charset "UTF-8";
+
+:root {
+	--rosa: rgb(255, 76, 160);
+	--rosa-claro: #fdd;
+	--rosa-escuro: #fab;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: linear-gradient(to bottom, #fee, var(--rosa-claro));
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header */
+header {
+	width: 100%;
+	background-color: var(--rosa-escuro);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1em;
+	position: fixed;
+	top: 0;
+	box-shadow: 0px 0px 20px var(--rosa-escuro);
+}
+
+header div.logo img {
+	width: 5em;
+}
+
+header div.cadastrar a {
+	color: var(--rosa-claro);
+	background-color: var(--rosa);
+	padding: 1em 2em;
+	font-size: 1.2em;
+}
+
+#btn-menu {
+	z-index: 999;
+	position: fixed;
+	top: 2.8em;
+	right: 2em;
+	cursor: pointer;
+	width: 3em;
+	height: 1.5em;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+#btn-menu div {
+	width: 100%;
+	height: 3px;
+	border-radius: 5px;
+	background-color: var(--rosa-claro);
+	transition: .15s;
+}
+
+nav.active #btn-menu :nth-child(1) {
+	rotate: -45deg;
+	translate: 0 10px;
+}
+
+nav.active #btn-menu :nth-child(2) {
+	translate: 300%;
+}
+
+nav.active #btn-menu :nth-child(3) {
+	rotate: 45deg;
+	translate: 0 -10px;
+}
+
+header nav ul {
+	list-style-type: none;
+	position: fixed;
+	top: 0;
+	right: -50%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	padding-top: 5em;
+	padding-right: 3em;
+	background-color: var(--rosa);
+	gap: 1.2em;
+	font-size: 1.5em;
+	transition: .5s;
+}
+
+header nav.active ul {
+	position: fixed;
+	top: 0;
+	right: 0;
+	box-shadow: -10px 0px 800px var(--rosa-claro);
+}
+
+header nav ul li a {
+	padding: 1em;
+	text-decoration: none;
+	color: var(--rosa-claro);
+}
+
+header nav ul li a:hover {
+	color: lightblue;
+}
+
+/* Main */
+main {
+	max-width: 1000px;
+	margin: 10em auto 4em auto;
+}
+
+main div.grid-container {
+	display: grid;
+	grid: auto / 1fr 1fr 1fr;
+	gap: 1em;
+}
+
+div.grid-container .carrossel {
+	grid-area: 1 / 1 / 1 / span 3;
+	overflow: hidden;
+}
+
+div.grid-container .carrossel .carrossel-inner {
+	width: 355%;
+	animation: carrossel 15s infinite;
+}
+
+div.grid-container .carrossel .carrossel-inner img {
+	max-width: 28.2%;
+}
+
+@keyframes carrossel {
+	0% {
+		margin-left: 0;
+	}
+
+	30% {
+		margin-left: 0;
+	}
+
+	35% {
+		margin-left: -100.5%;
+	}
+
+	60% {
+		margin-left: -100.5%;
+	}
+
+	65% {
+		margin-left: -201%;
+	}
+
+	95% {
+		margin-left: -201%;
+	}
+}
+
+div.grid-container
+	:is(
+		.img-amese img,
+		.video-saibamais img,
+		.img-vcsabia img,
+		.video-previnase img
+	) {
+	width: 100%;
+}
+
+div.grid-container .img-amese {
+	grid-area: 2 / 1 / 2 / span 2;
+}
+
+div.grid-container .video-previnase {
+	grid-area: 3 / 2 / 3 / span 2;
+}
+
+div.informe-se {
+	margin: 2em;
+}
+
+div.informe-se p {
+	margin-top: 1em;
+	text-align: justify;
+	text-indent: 1.5em;
+}
