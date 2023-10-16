@@ -1,109 +1,113 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  background-color: rgba(255, 255, 0, 0.2);
+	background-color: rgba(255, 255, 0, 0.2);
 }
 
 header {
-  background-color: rgb(255, 255, 104);
-  position: fixed;
-  width: 100vw;
-  height: 100px;
-  padding: 20px 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+	background-color: rgb(255, 255, 104);
+	position: fixed;
+	width: 100vw;
+	height: 100px;
+	padding: 20px 50px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-  font-size: 3.5em;
-  letter-spacing: -3px;
-  cursor: pointer;
+	font-size: 3.5em;
+	letter-spacing: -3px;
+	cursor: pointer;
 }
 
 header nav ul {
-  list-style-type: none;
-  display: flex;
-  gap: 30px;
+	list-style-type: none;
+	display: flex;
+	gap: 30px;
 }
 
 header nav ul li a {
-  text-decoration: none;
-  color: black;
+	text-decoration: none;
+	color: black;
 }
 
 header nav ul li a:hover {
-  text-decoration: underline;
+	text-decoration: underline;
 }
 
 main {
-  padding: 125px 50px 100px;
-  max-width: 1100px;
-  margin: auto;
+	padding: 125px 50px 100px;
+	max-width: 1100px;
+	margin: auto;
 }
 
 main section.new-note {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 25px;
-  border-bottom: 1px solid gold;
-  margin-bottom: 25px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+  flex-wrap: wrap;
+	padding-bottom: 25px;
+	border-bottom: 1px solid gold;
+	margin-bottom: 25px;
 }
 
 main section.new-note h2 span {
-  color: goldenrod;
-  font-weight: 800;
-  font-size: 1.45em;
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+	color: goldenrod;
+	font-weight: 800;
+	font-size: 1.45em;
+	text-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
 main section.new-note h2 {
-  font-size: 2.5em;
-  line-height: 1em;
-  max-width: 350px;
+	font-size: 2.5em;
+	line-height: 1em;
+	max-width: 350px;
 }
 
-#create-note {
-  padding: 10px 20px;
-  font-size: 1.2em;
-  cursor: pointer;
-  background-color: gold;
-  border: none;
-  border-radius: .5em;
-  box-shadow: 0px 0px 10px rgba(255, 217, 0, 0.3);
-  transition: .2s;
+.create-note {
+	padding: 10px 20px;
+	font-size: 1.2em;
+	cursor: pointer;
+	background-color: gold;
+	border: none;
+	border-radius: 0.5em;
+	box-shadow: 0px 0px 10px rgba(255, 217, 0, 0.3);
+	transition: 0.2s;
 }
 
-#create-note:hover {
-  background-color: rgba(255, 217, 0, 0.8);
-  box-shadow: 5px 8px 10px rgba(255, 217, 0, 0.3);
+.create-note:hover {
+	background-color: rgba(255, 217, 0, 0.8);
+	box-shadow: 5px 8px 10px rgba(255, 217, 0, 0.3);
 }
 
 main section.notes h3 {
-  font-size: 1.8em;
-  font-weight: 700;
+	font-size: 1.8em;
+	font-weight: 700;
 }
 
 .notes-container {
-  margin-top: 20px;
-  display: flex;
+  margin: 20px auto;
+	margin-top: 20px;
+	display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+	gap: 10px;
 }
 
 .note {
-  max-width: 240px;
-  border-radius: .5em;
-  overflow: hidden;
-  transition: .2s;
+  width: 240px;
+	border-radius: 0.5em;
+	overflow: hidden;
+	transition: 0.2s;
+  background-color: rgb(255, 255, 104);
+  height: 100%;
 }
 
 .note:hover {
@@ -112,22 +116,83 @@ main section.notes h3 {
 
 .note .note-title {
   padding: 8px;
-  background-color: gold;
+  font-size: 1.2em;
+  font-weight: 700;
+	background-color: gold;
 }
 
 .note .note-content {
-  background-color: rgba(255, 255, 0, 0.4);
+  width: 100%;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .note .note-content p {
-  margin-bottom: 10px;
+	margin-bottom: 10px;
+}
+
+.note .note-title h4:focus,
+.note .note-content p:focus {
+  outline: none;
+  border-bottom: 1px solid darkgoldenrod;
+}
+
+.note .note-content .action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
 }
 
 .note .note-content .action-buttons button {
-  padding: 5px;
+  padding: 8px;
   border-radius: 5px;
   border: none;
   background-color: gold;
   cursor: pointer;
+}
+
+section#create-new-note,
+div.container-create-new-note {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+  z-index: 999;
+}
+
+section#create-new-note {
+  display: none;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+div.container-create-new-note {
+  padding: 25px 50px 50px;
+  border-radius: 1em;
+  border-top: 40px solid gold;
+  background-color: rgb(255, 255, 90);
+}
+
+div.container-create-new-note form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+div.container-create-new-note form input,
+div.container-create-new-note form textarea {
+  font-size: 1.2em;
+  padding: 5px;
+  border: none;
+  outline: none;
+}
+
+.p-error {
+  display: none;
+  margin-top: -.3em;
+  font-size: .8em;
+  color: red;
 }

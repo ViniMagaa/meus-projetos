@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>aNotes</title>
   <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
 </head>
 
 <body>
@@ -13,7 +14,7 @@
     <h1>aNotes</h1>
     <nav>
       <ul>
-        <li><a href="#">Criar uma nota</a></li>
+        <li><a href="#" onclick="createNote()">Criar uma nota</a></li>
         <li><a href="#">Minhas notas</a></li>
         <li><a href="#">Compartilhar</a></li>
       </ul>
@@ -23,14 +24,16 @@
   <main>
     <section class="new-note">
       <h2>Gerencie suas <span>anotações</span> em um só lugar.</h2>
-      <button id="create-note">+ Criar uma nota</button>
+      <button class="create-note" onclick="createNote()">Criar nota</button>
     </section>
 
     <section class="notes">
       <h3>Suas notas</h3>
-      <div class="notes-container">
+      <div class="notes-container" id="container-notes">
         <div class="note">
-          <div class="note-title">Título da nota</div>
+          <div class="note-title">
+            <h4>Título da nota</h4>
+          </div>
           <div class="note-content">
             <p>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, nesciunt doloribus quibusdam expedita
@@ -42,114 +45,23 @@
             </div>
           </div>
         </div>
-        <div class="note">
-          <div class="note-title">Título da nota</div>
-          <div class="note-content">
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, nesciunt doloribus quibusdam expedita
-              blanditiis earum!
-            </p>
-            <div class="action-buttons">
-              <button class="edit">✏️</button>
-              <button class="delete">❌</button>
-            </div>
-          </div>
-        </div>
-        <div class="note">
-          <div class="note-title">Título da nota</div>
-          <div class="note-content">
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, nesciunt doloribus quibusdam expedita
-              blanditiis earum!
-            </p>
-            <div class="action-buttons">
-              <button class="edit">✏️</button>
-              <button class="delete">❌</button>
-            </div>
-          </div>
-        </div>
-        <div class="note">
-          <div class="note-title">Título da nota</div>
-          <div class="note-content">
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, nesciunt doloribus quibusdam expedita
-              blanditiis earum!
-            </p>
-            <div class="action-buttons">
-              <button class="edit">✏️</button>
-              <button class="delete">❌</button>
-            </div>
-          </div>
-        </div>
-        <div class="note">
-          <div class="note-title">Título da nota</div>
-          <div class="note-content">
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, nesciunt doloribus quibusdam expedita
-              blanditiis earum!
-            </p>
-            <div class="action-buttons">
-              <button class="edit">✏️</button>
-              <button class="delete">❌</button>
-            </div>
-          </div>
-        </div>
-        <div class="note">
-          <div class="note-title">Título da nota</div>
-          <div class="note-content">
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, nesciunt doloribus quibusdam expedita
-              blanditiis earum!
-            </p>
-            <div class="action-buttons">
-              <button class="edit">✏️</button>
-              <button class="delete">❌</button>
-            </div>
-          </div>
-        </div>
-        <div class="note">
-          <div class="note-title">Título da nota</div>
-          <div class="note-content">
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, nesciunt doloribus quibusdam expedita
-              blanditiis earum!
-            </p>
-            <div class="action-buttons">
-              <button class="edit">✏️</button>
-              <button class="delete">❌</button>
-            </div>
-          </div>
-        </div>
-        <div class="note">
-          <div class="note-title">Título da nota</div>
-          <div class="note-content">
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, nesciunt doloribus quibusdam expedita
-              blanditiis earum!
-            </p>
-            <div class="action-buttons">
-              <button class="edit">✏️</button>
-              <button class="delete">❌</button>
-            </div>
-          </div>
-        </div>
-        <div class="note">
-          <div class="note-title">Título da nota</div>
-          <div class="note-content">
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, nesciunt doloribus quibusdam expedita
-              blanditiis earum!
-            </p>
-            <div class="action-buttons">
-              <button class="edit">✏️</button>
-              <button class="delete">❌</button>
-            </div>
-          </div>
-        </div>
-
       </div>
     </section>
   </main>
+
+  <section id="create-new-note">
+    <div class="container-create-new-note">
+      <form>
+        <h1>Crie sua anotação</h1>
+        <input type="text" name="title" id="title" placeholder="Título da nota" required>
+        <p id="title-error-container" class="p-error">Adicione um título</p>
+        <textarea name="content" id="content" rows="10" placeholder="Conteúdo da nota" required></textarea>
+        <p id="content-error-container" class="p-error">Adicione um conteúdo</p>
+        <input type="submit" class="create-note" id="button-create-note" value="Criar nota">
+      </form>
+    </div>
+  </section>
+
 </body>
 
 </html>
