@@ -1,3 +1,20 @@
+:root {
+	--light-yellow: #F5D89A;
+	--medium-yellow: #ffd16f;
+	--light-blue: #9ABAF5;
+	--medium-blue: #5791fd;
+	--light-pink: #F59AC8;
+	--medium-pink: #ff79bc;
+	--light-green: #9AF59A;
+	--medium-green: #5de35d;
+	--light-grey: #A09886;
+	--dark-gray: #33322E;
+
+	--border: 3px solid var(--dark-gray);
+	--box-shadow: 5px 5px 0px var(--dark-gray);
+	--box-shadow-hover: 7px 7px 0px var(--dark-gray);
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -14,7 +31,7 @@ header {
 	position: fixed;
 	width: 100vw;
 	height: 100px;
-	padding: 20px 50px;
+	padding: 20px 30px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -25,6 +42,10 @@ header h1 {
 	font-size: 3.5em;
 	letter-spacing: -3px;
 	cursor: pointer;
+}
+
+header nav {
+	position: relative;
 }
 
 header nav ul {
@@ -42,8 +63,68 @@ header nav ul li a:hover {
 	text-decoration: underline;
 }
 
+@media screen and (max-width: 650px) {
+
+	header nav ul {
+		position: fixed;
+		top: 0;
+		left: 110%;		
+		padding-top: 120px;
+		padding-left: 40px;
+		width: 280px;
+		height: 100vh;
+		background-color: var(--light-yellow);
+		flex-direction: column;
+		font-size: 1.5em;
+		gap: 50px;
+		box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.3);
+	}
+	
+	header nav.active ul {
+		transition: .3s;
+		left: calc(100vw - 280px);		
+	}
+
+	div#menu-hamburger {
+		width: 60px;
+		height: 35px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		cursor: pointer;
+		position: relative;
+		z-index: 1;
+	}
+	
+	div#menu-hamburger div {
+		width: 100%;
+		height: 4px;
+		background-color: black;
+		transition: .3s;
+	}
+
+	header nav.active div#menu-hamburger :nth-child(1) {
+		rotate: -45deg;
+		translate: 0 15px;
+	}
+
+	header nav.active div#menu-hamburger :nth-child(2) {
+		translate: 300%;
+	}
+
+	header nav.active div#menu-hamburger :nth-child(3) {
+		rotate: 45deg;
+		translate: 0 -15px;
+	}
+
+	.notes-container {
+		justify-content: center;
+	}
+}
+
+
 main {
-	padding: 125px 50px 100px;
+	padding: 125px 30px 100px;
 	max-width: 1100px;
 	margin: auto;
 }
@@ -55,37 +136,38 @@ main section.new-note {
 	align-items: center;
   flex-wrap: wrap;
 	padding-bottom: 25px;
-	border-bottom: 1px solid gold;
+	border-bottom: 1px solid var(--light-yellow);
 	margin-bottom: 25px;
-}
-
-main section.new-note h2 span {
-	color: goldenrod;
-	font-weight: 800;
-	font-size: 1.45em;
-	text-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
 main section.new-note h2 {
 	font-size: 2.5em;
 	line-height: 1em;
-	max-width: 350px;
+	width: 350px;
+	margin-bottom: 10px;
+}
+
+main section.new-note h2 span {
+	color: var(--medium-blue);
+	font-weight: 800;
+	font-size: 1.45em;
+	text-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
 .create-note {
 	padding: 10px 20px;
 	font-size: 1.2em;
 	cursor: pointer;
-	background-color: gold;
-	border: none;
+	background-color: var(--medium-yellow);
+	border: var(--border);
 	border-radius: 0.5em;
-	box-shadow: 0px 0px 10px rgba(255, 217, 0, 0.3);
+	box-shadow: var(--box-shadow);
 	transition: 0.2s;
 }
 
 .create-note:hover {
-	background-color: rgba(255, 217, 0, 0.8);
-	box-shadow: 5px 8px 10px rgba(255, 217, 0, 0.3);
+	background-color: var(--light-yellow);
+	box-shadow: var(--box-shadow-hover);
 }
 
 main section.notes h3 {
@@ -106,19 +188,22 @@ main section.notes h3 {
 	border-radius: 0.5em;
 	overflow: hidden;
 	transition: 0.2s;
-  background-color: rgb(255, 255, 104);
+  background-color: var(--light-yellow);
+	box-shadow: var(--box-shadow);
+	border: var(--border);
   height: 100%;
 }
 
 .note:hover {
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	box-shadow: var(--box-shadow-hover);
 }
 
 .note .note-title {
-  padding: 8px;
+	padding: 8px;
   font-size: 1.2em;
   font-weight: 700;
-	background-color: gold;
+	border-bottom: var(--border);
+	background-color: var(--medium-yellow);
 }
 
 .note .note-content {
@@ -136,7 +221,7 @@ main section.notes h3 {
 .note .note-title h4:focus,
 .note .note-content p:focus {
   outline: none;
-  border-bottom: 1px solid darkgoldenrod;
+  border-bottom: 1px solid var(--dark-gray);
 }
 
 .note .note-content .action-buttons {
@@ -149,8 +234,14 @@ main section.notes h3 {
   padding: 8px;
   border-radius: 5px;
   border: none;
-  background-color: gold;
+  background-color: var(--medium-yellow);
+	border: var(--border);
   cursor: pointer;
+	transition: .3s;
+}
+
+.note .note-content .action-buttons button:hover {
+	background-color: var(--light-yellow);
 }
 
 section#create-new-note,
@@ -172,7 +263,7 @@ section#create-new-note {
 div.container-create-new-note {
   padding: 25px 50px 50px;
   border-radius: 1em;
-  border-top: 40px solid gold;
+  border-top: 40px solid var(--light-yellow);
   background-color: rgb(255, 255, 90);
 }
 

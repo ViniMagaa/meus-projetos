@@ -101,3 +101,13 @@ function createNote() {
 		}
 	});
 }
+
+/* MENU */
+function toggleMenu() {
+	const menu = document.getElementById("menu");
+	menu.classList.toggle("active");
+}
+
+const menuHamburger = document.getElementById("menu-hamburger");
+console.log(menuHamburger);
+menuHamburger.addEventListener("click", toggleMenu);

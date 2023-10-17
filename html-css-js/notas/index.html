@@ -6,16 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>aNotes</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
+  <script defer src="script.js"></script>
 </head>
 
 <body>
   <header>
     <h1>aNotes</h1>
-    <nav>
+    <nav id="menu">
+      <div id="menu-hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
       <ul>
         <li><a href="#" onclick="createNote()">Criar uma nota</a></li>
-        <li><a href="#">Minhas notas</a></li>
+        <li><a href="#notes">Minhas notas</a></li>
         <li><a href="#">Compartilhar</a></li>
       </ul>
     </nav>
@@ -27,7 +32,7 @@
       <button class="create-note" onclick="createNote()">Criar nota</button>
     </section>
 
-    <section class="notes">
+    <section class="notes" id="notes">
       <h3>Suas notas</h3>
       <div class="notes-container" id="container-notes">
         <div class="note">
