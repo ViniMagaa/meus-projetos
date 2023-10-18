@@ -124,6 +124,10 @@ header nav ul li a:hover {
 	.notes-container {
 		justify-content: center;
 	}
+
+	.note:not(:last-child) {
+		margin-bottom: 20px;
+	}
 }
 
 
@@ -185,6 +189,20 @@ main section.notes h3 {
 	display: flex;
   flex-wrap: wrap;
 	gap: 10px;
+}
+
+div#no-notes {
+	display: none;
+}
+
+div#no-notes a {
+	color: var(--medium-blue);
+	text-decoration: none;
+	font-weight: 500;
+}
+
+div#no-notes a:hover {
+	text-decoration: underline;
 }
 
 .note {
@@ -304,6 +322,11 @@ div.container-create-new-note form textarea {
 	border: none;
 }
 
+div.container-create-new-note form input:not(.create-note)::target-text,
+div.container-create-new-note form textarea::target-text {
+	color: var(--dark-gray);
+}
+
 div.note-color {
 	padding-bottom: 1em;
 	position: relative;
@@ -313,6 +336,7 @@ div.note-color {
 }
 
 div.container-create-new-note input[type="radio"] {
+	visibility: hidden;
 	margin-left: .7em;
 }
 

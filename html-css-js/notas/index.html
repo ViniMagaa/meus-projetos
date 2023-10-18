@@ -34,23 +34,11 @@
 
     <section class="notes" id="notes">
       <h3>Suas notas</h3>
-      <div class="notes-container" id="container-notes">
-        <!-- <div class="note">
-          <div class="note-title">
-            <h4>Título da nota</h4>
-          </div>
-          <div class="note-content">
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, nesciunt doloribus quibusdam expedita
-              blanditiis earum!
-            </p>
-            <div class="action-buttons">
-              <button class="edit">✏️</button>
-              <button class="delete">❌</button>
-            </div>
-          </div>
-        </div> -->
+      <div id="no-notes">
+        <h4>Você não possui anotações.</h4>
+        <p><a href="#" onclick="createNote()">Clique aqui</a> para adicionar uma nota!</p>
       </div>
+      <div class="notes-container" id="container-notes"></div>
     </section>
   </main>
 
@@ -63,7 +51,7 @@
         <h1>Crie sua anotação</h1>
         <input type="text" name="title" id="title" placeholder="Título da nota" required>
         <p id="title-error-container" class="p-error">Adicione um título</p>
-        <textarea name="content" id="content" rows="10" placeholder="Conteúdo da nota" required></textarea>
+        <textarea name="content" id="content" rows="10" style="min-width: 265px;" placeholder="Conteúdo da nota" required></textarea>
         <p id="content-error-container" class="p-error">Adicione um conteúdo</p>
         <strong>Cor da nota:</strong>
         <div class="note-color">
