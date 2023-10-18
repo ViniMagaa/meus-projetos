@@ -21,7 +21,7 @@
       <ul>
         <li><a href="#" onclick="createNote()">Criar uma nota</a></li>
         <li><a href="#notes">Minhas notas</a></li>
-        <li><a href="#">Compartilhar</a></li>
+        <li><a href="#" onclick="copyURL()">Compartilhar</a></li>
       </ul>
     </nav>
   </header>
@@ -35,7 +35,7 @@
     <section class="notes" id="notes">
       <h3>Suas notas</h3>
       <div class="notes-container" id="container-notes">
-        <div class="note">
+        <!-- <div class="note">
           <div class="note-title">
             <h4>Título da nota</h4>
           </div>
@@ -49,19 +49,33 @@
               <button class="delete">❌</button>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </section>
   </main>
 
   <section id="create-new-note">
     <div class="container-create-new-note">
+      <div class="create-new-note-header">
+        <button onclick="closeForm()">X</button>
+      </div>
       <form>
         <h1>Crie sua anotação</h1>
         <input type="text" name="title" id="title" placeholder="Título da nota" required>
         <p id="title-error-container" class="p-error">Adicione um título</p>
         <textarea name="content" id="content" rows="10" placeholder="Conteúdo da nota" required></textarea>
         <p id="content-error-container" class="p-error">Adicione um conteúdo</p>
+        <strong>Cor da nota:</strong>
+        <div class="note-color">
+          <input type="radio" name="color" id="yellow" value="yellow" checked>
+          <label for="yellow"></label>
+          <input type="radio" name="color" id="blue" value="blue">
+          <label for="blue"></label>
+          <input type="radio" name="color" id="pink" value="pink">
+          <label for="pink"></label>
+          <input type="radio" name="color" id="green" value="green">
+          <label for="green"></label>
+        </div>
         <input type="submit" class="create-note" id="button-create-note" value="Criar nota">
       </form>
     </div>
