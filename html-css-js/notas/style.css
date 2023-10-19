@@ -1,36 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900;1000&display=swap");
 
 :root {
-	--ultra-light-yellow: #F9F3E5;
-	--light-yellow: #F5D89A;
+	--bg-color: #f9f3e5;
+	--header-color: var(--medium-yellow);
+	--span-color: var(--medium-blue);
+	--text-color: var(--dark-gray);
+	--light-yellow: #f5d89a;
 	--medium-yellow: #ffd16f;
-	--light-blue: #9ABAF5;
+	--light-blue: #9abaf5;
 	--medium-blue: #5791fd;
-	--light-pink: #F59AC8;
+	--light-pink: #f59ac8;
 	--medium-pink: #ff79bc;
-	--light-green: #9AF59A;
+	--light-green: #9af59a;
 	--medium-green: #5de35d;
-	--light-grey: #A09886;
-	--dark-gray: #33322E;
+	--light-gray: #a09886;
+	--dark-gray: #33322e;
 
 	--border: 3px solid var(--dark-gray);
-	--box-shadow: 5px 5px 0px var(--dark-gray);
-	--box-shadow-hover: 7px 7px 0px var(--dark-gray);
+	--box-shadow: 3% 3% 0 var(--dark-gray);
+	--box-shadow-hover: 7% 7% 0% var(--dark-gray);
 }
 
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: 'Nunito', 'Segoe UI', sans-serif;
+	font-family: "Nunito", "Segoe UI", sans-serif;
 }
 
 body {
-	background-color: var(--ultra-light-yellow);
+	background-color: var(--bg-color);
 }
 
 header {
-	background-color: var(--medium-yellow);
+	background-color: var(--header-color);
 	position: fixed;
 	width: 100vw;
 	height: 100px;
@@ -41,11 +44,34 @@ header {
 	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 }
 
-header h1 {
-	font-size: 3.5em;
+header h1 a {
+	text-decoration: none;
+	font-size: 3.5rem;
+	color: var(--text-color);
 	font-weight: 900;
 	letter-spacing: -3px;
 	cursor: pointer;
+}
+
+.container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 4vw;
+}
+
+header .btn-dark-mode {
+	font-size: 1.5rem;
+	border-radius: 0.5em;
+	background: #5791fd;
+	border: var(--border);
+	box-shadow: var(--box-shadow);
+	transition: 0.3s;
+	cursor: pointer;
+}
+
+header .btn-dark-mode:hover {
+	box-shadow: var(--box-shadow-hover);
 }
 
 header nav {
@@ -60,33 +86,32 @@ header nav ul {
 
 header nav ul li a {
 	text-decoration: none;
-	color: black;
+	color: var(--text-color);
 }
 
 header nav ul li a:hover {
 	text-decoration: underline;
 }
 
-@media screen and (max-width: 650px) {
-
+@media screen and (max-width: 700px) {
 	header nav ul {
 		position: fixed;
 		top: 0;
-		left: 130%;		
+		left: 130%;
 		padding-top: 120px;
 		padding-left: 40px;
 		width: 280px;
 		height: 100vh;
-		background-color: var(--medium-yellow);
+		background-color: var(--header-color);
 		flex-direction: column;
 		font-size: 1.5em;
 		gap: 50px;
 		box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.5);
 	}
-	
+
 	header nav.active ul {
-		transition: .3s;
-		left: calc(100vw - 280px);		
+		transition: 0.3s;
+		left: calc(100vw - 280px);
 	}
 
 	div#menu-hamburger {
@@ -99,12 +124,12 @@ header nav ul li a:hover {
 		position: relative;
 		z-index: 1;
 	}
-	
+
 	div#menu-hamburger div {
 		width: 100%;
 		height: 4px;
-		background-color: black;
-		transition: .3s;
+		background-color: var(--text-color);
+		transition: 0.3s;
 	}
 
 	header nav.active div#menu-hamburger :nth-child(1) {
@@ -124,12 +149,7 @@ header nav ul li a:hover {
 	.notes-container {
 		justify-content: center;
 	}
-
-	.note:not(:last-child) {
-		margin-bottom: 20px;
-	}
 }
-
 
 main {
 	padding: 125px 30px 100px;
@@ -142,9 +162,9 @@ main section.new-note {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-  flex-wrap: wrap;
+	flex-wrap: wrap;
 	padding-bottom: 25px;
-	border-bottom: 3px solid var(--medium-yellow);
+	border-bottom: 3px solid var(--header-color);
 	margin-bottom: 25px;
 }
 
@@ -156,7 +176,7 @@ main section.new-note h2 {
 }
 
 main section.new-note h2 span {
-	color: var(--medium-blue);
+	color: var(--span-color);
 	font-weight: 900;
 	font-size: 1.5em;
 	text-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
@@ -166,7 +186,8 @@ main section.new-note h2 span {
 	padding: 10px 20px;
 	font-size: 1.2em;
 	cursor: pointer;
-	background-color: var(--medium-yellow);
+	color: var(--text-color);
+	background-color: var(--header-color);
 	border: var(--border);
 	border-radius: 0.5em;
 	box-shadow: var(--box-shadow);
@@ -174,7 +195,7 @@ main section.new-note h2 span {
 }
 
 .create-note:hover {
-	background-color: var(--light-yellow);
+	filter: brightness(90%);
 	box-shadow: var(--box-shadow-hover);
 }
 
@@ -184,11 +205,11 @@ main section.notes h3 {
 }
 
 .notes-container {
-  margin: 20px auto;
+	margin: 20px auto;
 	margin-top: 20px;
 	display: flex;
-  flex-wrap: wrap;
-	gap: 10px;
+	flex-wrap: wrap;
+	gap: 20px;
 }
 
 div#no-notes {
@@ -196,9 +217,8 @@ div#no-notes {
 }
 
 div#no-notes a {
-	color: var(--medium-blue);
-	text-decoration: none;
-	font-weight: 500;
+	font-weight: 900;
+	color: var(--text-color);
 }
 
 div#no-notes a:hover {
@@ -206,14 +226,14 @@ div#no-notes a:hover {
 }
 
 .note {
-  width: 240px;
+	width: 240px;
 	border-radius: 0.5em;
 	overflow: hidden;
 	transition: 0.2s;
-  background-color: var(--light-yellow);
+	background-color: var(--light-yellow);
 	box-shadow: var(--box-shadow);
 	border: var(--border);
-  height: 100%;
+	height: 100%;
 }
 
 .note:hover {
@@ -222,18 +242,18 @@ div#no-notes a:hover {
 
 .note .note-title {
 	padding: 8px;
-  font-size: 1.2em;
-  font-weight: 700;
+	font-size: 1.2em;
+	font-weight: 700;
 	border-bottom: var(--border);
 	background-color: var(--medium-yellow);
 }
 
 .note .note-content {
-  width: 100%;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+	width: 100%;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 .note .note-content p {
@@ -242,28 +262,28 @@ div#no-notes a:hover {
 
 .note .note-title h4:focus,
 .note .note-content p:focus {
-  outline: none;
-  border-bottom: 1px solid var(--dark-gray);
+	outline: none;
+	border-bottom: 1px solid var(--dark-gray);
 }
 
 .note .note-content .action-buttons {
-  display: flex;
-  justify-content: flex-end;
-  gap: 5px;
+	display: flex;
+	justify-content: flex-end;
+	gap: 5px;
 }
 
 .note .note-content .action-buttons button {
-  padding: 8px;
-  border-radius: 5px;
-  border: none;
-  background-color: var(--medium-yellow);
+	padding: 8px;
+	border-radius: 5px;
+	border: none;
+	background-color: var(--medium-yellow);
 	border: var(--border);
-  cursor: pointer;
-	transition: .3s;
+	cursor: pointer;
+	transition: 0.3s;
 }
 
 .note .note-content .action-buttons button:hover {
-	background-color: var(--light-yellow);
+	filter: brightness(70%);
 }
 
 section#create-new-note,
@@ -272,11 +292,11 @@ div.container-create-new-note {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-  z-index: 999;
+	z-index: 999;
 }
 
 section#create-new-note {
-  display: none;
+	display: none;
 	width: 100vw;
 	height: 100vh;
 	background-color: rgba(0, 0, 0, 0.4);
@@ -285,7 +305,7 @@ section#create-new-note {
 div.container-create-new-note {
 	overflow: hidden;
 	border-radius: 1em;
-  background-color: var(--light-yellow);
+	background-color: var(--light-yellow);
 	border: var(--border);
 	box-shadow: var(--box-shadow);
 }
@@ -300,25 +320,26 @@ div.create-new-note-header {
 }
 
 div.create-new-note-header button {
+	color: var(--text-color);
 	background: none;
 	border: none;
 	font-size: 1.5em;
-	padding: 0 .5em;
+	padding: 0 0.5em;
 	cursor: pointer;
 }
 
 div.container-create-new-note form {
 	padding: 25px 50px 50px;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
 }
 
 div.container-create-new-note form input:not(.create-note),
 div.container-create-new-note form textarea {
-  font-size: 1.2em;
-  padding: 5px;
-  outline: none;
+	font-size: 1.2em;
+	padding: 5px;
+	outline: none;
 	border: none;
 }
 
@@ -337,7 +358,7 @@ div.note-color {
 
 div.container-create-new-note input[type="radio"] {
 	visibility: hidden;
-	margin-left: .7em;
+	margin-left: 0.7em;
 }
 
 div.container-create-new-note input[type="radio"] + label {
@@ -347,7 +368,7 @@ div.container-create-new-note input[type="radio"] + label {
 	border: var(--border);
 	border-radius: 5px;
 	cursor: pointer;
-	transition: .2s;
+	transition: 0.2s;
 }
 
 div.container-create-new-note input[type="radio"]:checked + label {
@@ -363,7 +384,7 @@ input[type="radio"]#blue + label[for="blue"] {
 }
 
 input[type="radio"]#pink + label[for="pink"] {
-	background-color: var(--medium-pink);	
+	background-color: var(--medium-pink);
 }
 
 input[type="radio"]#green + label[for="green"] {
@@ -371,8 +392,8 @@ input[type="radio"]#green + label[for="green"] {
 }
 
 .p-error {
-  display: none;
-  margin-top: -.3em;
-  font-size: .8em;
-  color: red;
+	display: none;
+	margin-top: -0.3em;
+	font-size: 0.8em;
+	color: red;
 }

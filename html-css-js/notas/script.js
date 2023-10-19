@@ -1,3 +1,5 @@
+let noteId = localStorage.getItem("noteId") || 0;
+
 function createElementOnHTML(
 	tag,
 	innerText = "",
@@ -14,6 +16,7 @@ function createElementOnHTML(
 	return element;
 }
 
+// Manipulating notes
 function editNote(title, content, btnEdit, color, noteId) {
 	if (btnEdit.innerText === "✏️") {
 		title.contentEditable = true;
@@ -44,12 +47,10 @@ function deleteNote(noteId) {
 	return;
 }
 
-let noteId = localStorage.getItem("noteId") || 0;
-
 function addNote(title, content, color, idNote) {
 	const lightColor = `var(--light-${color})`;
 	const mediumColor = `var(--medium-${color})`;
-	
+
 	const divNotesContainer = document.getElementById("container-notes");
 	const firstNote = divNotesContainer.querySelector(".note");
 	const divNote = createElementOnHTML("div", "", "note");
@@ -97,7 +98,7 @@ function addNote(title, content, color, idNote) {
 		editNote(h4Title, pContent, buttonEdit, color, idNote);
 	buttonDelete.onclick = () => deleteNote(idNote);
 
-	return divNotesContainer.insertBefore(divNote, firstNote);;
+	return divNotesContainer.insertBefore(divNote, firstNote);
 }
 
 function checkIfExistsContent(title, content) {
@@ -136,6 +137,23 @@ function createNote() {
 	formNewNote.style.display = "flex";
 	noteTitle.focus();
 
+	const containerColors = document.getElementById("id-note-color");
+
+	containerColors.addEventListener("click", () => {
+		const color = document.querySelector("input[name=color]:checked").value;
+		const containerCreate = document.getElementById(
+			"id-container-create-new-note"
+		);
+		const containerHeaderCreate = document.getElementById(
+			"id-create-new-note-header"
+		);
+		const lightColor = `var(--light-${color})`;
+		const mediumColor = `var(--medium-${color})`;
+
+		containerCreate.style.backgroundColor = lightColor;
+		containerHeaderCreate.style.backgroundColor = mediumColor;
+	});
+
 	const buttonCreateNote = document.getElementById("button-create-note");
 	buttonCreateNote.addEventListener("click", (e) => {
 		e.preventDefault();
@@ -169,7 +187,7 @@ function createNote() {
 function closeForm() {
 	const formNewNote = document.getElementById("create-new-note");
 
-	formNewNote.style.display = "none";
+	return (formNewNote.style.display = "none");
 }
 
 function loadNotesFromLocalStorage() {
@@ -178,7 +196,7 @@ function loadNotesFromLocalStorage() {
 
 	divNotesContainer.innerHTML = "";
 
-	if (localStorage.length > 1) {
+	if (localStorage.length > 2) {
 		divNoNotes.style.display = "none";
 		for (let i = 0; i <= localStorage.length; i++) {
 			const key = localStorage.key(i);
@@ -194,18 +212,19 @@ function loadNotesFromLocalStorage() {
 	} else {
 		divNoNotes.style.display = "block";
 	}
+	return;
 }
 
-// MENU
+// Menu
 function toggleMenu() {
 	const menu = document.getElementById("menu");
-	menu.classList.toggle("active");
+	return menu.classList.toggle("active");
 }
 
 const menuHamburger = document.getElementById("menu-hamburger");
 menuHamburger.addEventListener("click", toggleMenu);
 
-// COMPARTILHAR
+// Share
 function copyURL() {
 	const url = "https://vinimagaa.github.io/meus-projetos/html-css-js/notas/";
 	navigator.clipboard
@@ -216,6 +235,105 @@ function copyURL() {
 		.catch(() => {
 			alert("Algo deu errado");
 		});
+	return;
+}
+
+// Switch color mode
+const btnSwitcher = document.getElementById("btn-switch-mode");
+
+const mode = localStorage.getItem("mode") || "white";
+
+function darkMode() {
+	localStorage.setItem("mode", "dark");
+	btnSwitcher.innerText = "☀️";
+
+	document.documentElement.style.setProperty("--bg-color", "#222");
+	document.documentElement.style.setProperty("--header-color", "#444");
+	document.documentElement.style.setProperty(
+		"--span-color",
+		"var(--light-blue)"
+	);
+	document.documentElement.style.setProperty(
+		"--text-color",
+		"var(--light-gray)"
+	);
+	document.documentElement.style.setProperty("--light-yellow", "#AB7D38");
+	document.documentElement.style.setProperty("--medium-yellow", "#5E451F");
+	document.documentElement.style.setProperty("--light-blue", "#383A7E");
+	document.documentElement.style.setProperty("--medium-blue", "#272959");
+	document.documentElement.style.setProperty("--light-pink", "#C84771");
+	document.documentElement.style.setProperty("--medium-pink", "#62374E");
+	document.documentElement.style.setProperty("--light-green", "#519872");
+	document.documentElement.style.setProperty("--medium-green", "#3B5249");
+	document.documentElement.style.setProperty("--light-gray", "#ccc");
+	document.documentElement.style.setProperty("--dark-gray", "#444");
+	document.documentElement.style.setProperty("--border", "3px solid #eee");
+	document.documentElement.style.setProperty("--box-shadow", "3px 3px 0 #eee");
+	document.documentElement.style.setProperty(
+		"--box-shadow-hover",
+		"7px 7px 0 #eee"
+	);
+	document.body.style.color = "#eee";
+	return;
+}
+
+function whiteMode() {
+	localStorage.setItem("mode", "white");
+	btnSwitcher.innerText = "🌙";
+
+	document.documentElement.style.setProperty("--bg-color", "#F9F3E5");
+	document.documentElement.style.setProperty(
+		"--header-color",
+		"var(--medium-yellow)"
+	);
+	document.documentElement.style.setProperty(
+		"--span-color",
+		"var(--medium-blue)"
+	);
+	document.documentElement.style.setProperty(
+		"--text-color",
+		"var(--dark-gray)"
+	);
+	document.documentElement.style.setProperty("--light-yellow", "#F5D89A");
+	document.documentElement.style.setProperty("--medium-yellow", "#ffd16f");
+	document.documentElement.style.setProperty("--light-blue", "#9ABAF5");
+	document.documentElement.style.setProperty("--medium-blue", "#5791fd");
+	document.documentElement.style.setProperty("--light-pink", "#F59AC8");
+	document.documentElement.style.setProperty("--medium-pink", "#ff79bc");
+	document.documentElement.style.setProperty("--light-green", "#9AF59A");
+	document.documentElement.style.setProperty("--medium-green", "#5de35d");
+	document.documentElement.style.setProperty("--light-grey", "#A09886");
+	document.documentElement.style.setProperty("--dark-gray", "#33322E");
+	document.documentElement.style.setProperty(
+		"--border",
+		"3px solid var(--dark-gray)"
+	);
+	document.documentElement.style.setProperty(
+		"--box-shadow",
+		"3px 3px 0px var(--dark-gray)"
+	);
+	document.documentElement.style.setProperty(
+		"--box-shadow-hover",
+		"7px 7px 0px var(--dark-gray)"
+	);
+	document.body.style.color = "#111";
+	return;
+}
+
+// Load color mode
+if (mode == "white") {
+	whiteMode();
+} else {
+	darkMode();
+}
+
+function switchColorMode() {
+	if (localStorage.getItem("mode") == "white") {
+		darkMode();
+	} else {
+		whiteMode();
+	}
+	return;
 }
 
 loadNotesFromLocalStorage();

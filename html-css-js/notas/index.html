@@ -11,7 +11,10 @@
 
 <body>
   <header>
-    <h1>aNotes</h1>
+    <div class="container">
+      <h1><a href="https://vinimagaa.github.io/meus-projetos/html-css-js/notas/">aNotes</a></h1>
+      <button id="btn-switch-mode" class="btn-dark-mode" onclick="switchColorMode()">🌙</button>
+    </div>
     <nav id="menu">
       <div id="menu-hamburger">
         <div></div>
@@ -43,18 +46,19 @@
   </main>
 
   <section id="create-new-note">
-    <div class="container-create-new-note">
-      <div class="create-new-note-header">
+    <div class="container-create-new-note" id="id-container-create-new-note">
+      <div class="create-new-note-header" id="id-create-new-note-header">
         <button onclick="closeForm()">X</button>
       </div>
       <form>
         <h1>Crie sua anotação</h1>
         <input type="text" name="title" id="title" placeholder="Título da nota" required>
         <p id="title-error-container" class="p-error">Adicione um título</p>
-        <textarea name="content" id="content" rows="10" style="min-width: 265px;" placeholder="Conteúdo da nota" required></textarea>
+        <textarea name="content" id="content" rows="10" style="min-width: 265px;" placeholder="Conteúdo da nota"
+          required></textarea>
         <p id="content-error-container" class="p-error">Adicione um conteúdo</p>
         <strong>Cor da nota:</strong>
-        <div class="note-color">
+        <div class="note-color" id="id-note-color">
           <input type="radio" name="color" id="yellow" value="yellow" checked>
           <label for="yellow"></label>
           <input type="radio" name="color" id="blue" value="blue">
