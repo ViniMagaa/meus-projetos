@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizza Counter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Contador de Pizzas</h1>
+    <p>Quem será que come mais?</p>
+  </header>
+
+  <main>
+    <section class="container-people display-flex-center">
+      <div class="container-person display-flex-center">
+        <button class="minus" onclick="subtraction()">
+          <img src="imgs/minus.svg" alt="-">
+        </button>
+        <div class="name-and-value display-flex-center">
+          <input type="text" name="name" class="person-name">
+          <div class="number-pizza">
+            <p class="number display-flex-center">10</p>
+          </div>
+        </div>
+        <button class="plus" onclick="addition()">
+          <img src="imgs/plus.svg" alt="+">
+        </button>
+      </div>
+    </section>
+
+    <div class="add-people display-flex-center">
+      <button class="add-more-people display-flex-center" onclick="addPerson()">
+        <img src="imgs/plus.svg" alt="+" width="30px">
+        <p>Adicionar pessoas</p>
+      </button>
+    </div>
+
+    <section class="container-calculate-score display-flex-center">
+      <button class="btn-calculate-score" id="btn-calculate">Calcular placar</button>
+      <div id="score" class="display-flex-center">
+        <h2>Hoje fulano deu prejuízo!</h2>
+        <table>
+          <tr>
+            <th>Posição</th>
+            <th >Nome</th>
+            <th>Fatias comidas</th>
+          </tr>
+          <tr>
+            <td>1º</td>
+            <td>Fulano 1</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>2º</td>
+            <td>Fulano 2</td>
+            <td>10</td>
+          </tr>
+          <tr>
+            <td>3º</td>
+            <td>Fulano 3</td>
+            <td>10</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

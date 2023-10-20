@@ -1,0 +1,167 @@
+:root {
+	--box-shadow: 0 0 50px rgba(57, 4, 4, 0.3);
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	color: #eee;
+	background-color: #434343;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+	background-color: #d52e2e;
+	padding: 50px 10px;
+	text-align: center;
+	font-size: 1.25em;
+	border-radius: 0 0 30px 30px;
+	box-shadow: var(--box-shadow);
+}
+
+main {
+	padding: 30px 50px;
+	margin: auto;
+}
+
+.display-flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container-people {
+	flex-direction: column;
+	margin: auto;
+	max-width: 450px;
+	gap: 30px;
+}
+
+.container-person {
+	width: 100%;
+	height: 30px;
+	justify-content: space-between;
+	background-color: #777;
+	border-radius: 3em;
+}
+
+.container-person input,
+.container-person button {
+	height: 100%;
+	background: transparent;
+	font-size: 1.5em;
+	text-align: center;
+	border: none;
+	outline: none;
+	transition: 0.2s;
+}
+
+.container-person input {
+	width: 100%;
+}
+
+.container-person button {
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.container-person button:hover {
+	background-color: #999;
+}
+
+.plus {
+	padding: 4px;
+	width: 30px;
+}
+
+.name-and-value {
+	background-color: #eee;
+	border-radius: 3em;
+	margin: 0 5px;
+	position: relative;
+}
+
+.name-and-value input {
+	padding: 5px 0;
+	color: black;
+	margin-left: 15px;
+}
+
+.number-pizza {
+	background-color: #d52e2e;
+	box-shadow: 0 0 40px #434343;
+	border-radius: 50%;
+	font-weight: 700;
+	line-height: 0;
+}
+
+.number-pizza .number {
+	width: 2.5em;
+	height: 2.5em;
+}
+
+.add-people {
+	width: 100%;
+	margin: 2em 0;
+	padding: 2em 0;
+	border-bottom: 1px solid #777;
+}
+
+.add-people button,
+.container-calculate-score .btn-calculate-score {
+	font-size: 1em;
+	background-color: #d52e2e;
+	box-shadow: var(--box-shadow);
+	border: none;
+	border-radius: 2em;
+	outline: none;
+	padding: 1em;
+	color: white;
+	gap: 1em;
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+.add-people button:hover,
+.container-calculate-score .btn-calculate-score:hover {
+	filter: brightness(80%);
+}
+
+.container-calculate-score {
+	max-width: 450px;
+	margin: auto;
+	flex-direction: column;
+	gap: 30px;
+}
+
+#score {
+	flex-direction: column;
+}
+
+#score table {
+	width: 100%;
+	margin: 10px auto;
+	overflow: hidden;
+	box-shadow: var(--box-shadow);
+	border-radius: 1em;
+	border-collapse: collapse;
+}
+
+#score table th,
+#score table td {
+	padding: .3em 1em;
+	text-align: center;
+}
+
+#score table th {
+	font-size: 1.2em;
+	background-color: #d52e2e;
+}
+
+#score table tr:nth-child(odd) {
+	background-color: #555;
+}
