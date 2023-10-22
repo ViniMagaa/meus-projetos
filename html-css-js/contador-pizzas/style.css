@@ -41,6 +41,12 @@ main {
 	gap: 30px;
 }
 
+.container-people #description {
+	flex-direction: column;
+	text-align: center;
+	gap: 30px;
+}
+
 .container-person {
 	width: 100%;
 	height: 30px;
@@ -106,8 +112,8 @@ main {
 
 .add-people {
 	width: 100%;
-	margin: 2em 0;
-	padding: 2em 0;
+	margin: 1.5em 0;
+	padding: 1.5em 0;
 	border-bottom: 1px solid #777;
 }
 
@@ -139,6 +145,7 @@ main {
 }
 
 #score {
+	display: none;
 	flex-direction: column;
 }
 
@@ -153,7 +160,7 @@ main {
 
 #score table th,
 #score table td {
-	padding: .3em 1em;
+	padding: 0.3em 1em;
 	text-align: center;
 }
 
