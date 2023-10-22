@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Border radius visualizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="flex box-shadow">
+    <h1>Raio da borda</h1>
+    <p>Visualize como os valores de raio de borda CSS3 afetam um elemento!</p>
+  </header>
+
+  <main>
+    <div class="container-box flex">
+      <div id="box"></div>
+      <input type="range" name="radius" id="top-l" value="0" min="0" max="100">
+      <input type="range" name="radius" id="top-r" value="0" min="0" max="100">
+      <input type="range" name="radius" id="bottom-l" value="0" min="0" max="100">
+      <input type="range" name="radius" id="bottom-r" value="0" min="0" max="100">
+    </div>
+
+    <div class="container-css flex box-shadow">
+      <code id="css-preview">border-radius: 0% 0% 0% 0%;</code>
+      <button id="copy-css">⤵️ Copiar</button>
+    </div>
+  </main>
+</body>
+</html>
