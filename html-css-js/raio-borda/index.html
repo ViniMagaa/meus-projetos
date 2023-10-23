@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Border radius visualizer</title>
   <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
 </head>
+
 <body>
   <header class="flex box-shadow">
     <h1>Raio da borda</h1>
@@ -14,17 +17,19 @@
 
   <main>
     <div class="container-box flex">
-      <div id="box"></div>
-      <input type="range" name="radius" id="top-l" value="0" min="0" max="100">
-      <input type="range" name="radius" id="top-r" value="0" min="0" max="100">
-      <input type="range" name="radius" id="bottom-l" value="0" min="0" max="100">
-      <input type="range" name="radius" id="bottom-r" value="0" min="0" max="100">
+      <div id="box">
+        <input type="range" name="radius" id="top-l" value="70" min="0" max="100">
+        <input type="range" name="radius" id="top-r" value="30" min="0" max="100">
+        <input type="range" name="radius" id="bottom-l" value="40" min="0" max="100">
+        <input type="range" name="radius" id="bottom-r" value="30" min="0" max="100">
+      </div>
     </div>
 
     <div class="container-css flex box-shadow">
-      <code id="css-preview">border-radius: 0% 0% 0% 0%;</code>
+      <code id="css-preview"></code>
       <button id="copy-css">⤵️ Copiar</button>
     </div>
   </main>
 </body>
+
 </html>

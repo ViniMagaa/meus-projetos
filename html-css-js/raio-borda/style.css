@@ -37,33 +37,58 @@ main {
 	padding: 2em 2em;
 }
 
+.container-box {
+	margin: 1em auto 4em;
+	max-width: fit-content;
+	outline: 1px solid #eee;
+	outline-offset: 1em;
+}
+
 #box {
 	width: 10em;
 	height: 10em;
 	background: linear-gradient(to bottom right, lightskyblue, darkblue);
-  outline: 1px solid #eee;
-  outline-offset: 1em;
+	position: relative;
 }
 
-/* 
 .container-box input[type="range"] {
 	-webkit-appearance: none;
 	appearance: none;
 	background: none;
 	cursor: pointer;
 	width: 15rem;
+	position: absolute;
+}
+
+.container-box input#top-r {
+	top: 7.1em;
+	left: 6.45em;
+	rotate: 90deg;
+}
+.container-box input#top-l {
+	top: -1.15em;
+	right: -1.8em;
+}
+.container-box input#bottom-r {
+	bottom: -1.1em;
+	right: -1.9em;
+	rotate: 180deg;
+}
+.container-box input#bottom-l {
+	bottom: 7.2em;
+	left: -10em;
+	rotate: -90deg;
 }
 
 .container-box input[type="range"]::-webkit-slider-thumb {
 	-webkit-appearance: none;
 	appearance: none;
 	margin-top: -12px;
-	background-color: #eee;
+	background-color: lightseagreen;
 	border-radius: 50%;
-	height: 10px;
-	width: 10px;
-} 
-*/
+	height: 15px;
+	width: 15px;
+}
 
 .container-css {
 	max-width: 500px;
