@@ -148,7 +148,7 @@ function calculateScore() {
 		btnReload.innerHTML = "";
 		btnReload.appendChild(createImgOnHTML("imgs/reload.svg", "🔃"));
 		btnReload.appendChild(createElementOnHTML("p", "Refazer"));
-		btnReload.addEventListener("click", () => window.location.reload());
+		btnReload.onclick = () => window.location.reload();
 	} else {
 		alert("Confira os dados e tente novamente");
 	}
