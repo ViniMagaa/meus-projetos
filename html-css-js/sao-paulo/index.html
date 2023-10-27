@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUSE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="container">
+        <header>
+            <h1 class="nome-mae">São Paulo</h1>
+            <p>Esse projeto é visado ao "Vai sao pauloOoOoOoOoO!"</p>
+        </header>
+        <div class="img">
+            <h2>Veja uma imagem do SAO pAULo</h2>
+            <img src="">
+        </div>
+        <div class="colocar-nome">
+            <h2>Converse com o sao paulo!</h2>
+            <label for="nome">Digite seu nome:</label>
+            <input type="text" name="nome" id="nome" placeholder="Seu nome" autocomplete="off">
+            <input type="submit" value="Clique aqui!" onclick="chatMae('sp')">
+        </div>
+        <div class="chat">
+            <h2>Chat online com VAI_SAO_PAULINHO</h2>
+            <hr>
+            <div class="msgs"></div>
+            <hr>
+            <div class="escrever-msg">
+                <input type="text" name="mensagem-usu" id="mensagem-usu" placeholder="Escreva sua mensagem...">
+                <input type="submit" value="➡" onclick="mandarMsg()">
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

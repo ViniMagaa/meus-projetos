@@ -1,0 +1,167 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body,
+html {
+	padding: 2em 1em;
+	width: 100%;
+	min-height: 100%;
+	background-image: linear-gradient(
+		to bottom,
+		red,
+		red,
+		orange,
+		orange,
+		yellow,
+		yellow,
+		green,
+		green,
+		blue,
+		blue,
+		purple,
+		purple
+	);
+	color: white;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	display: flex;
+}
+
+hr {
+	margin: 0.8em 0;
+}
+
+section.container {
+	padding: 3em;
+	margin: auto;
+	width: clamp(450px, 80%, 800px);
+	background-color: rgba(0, 0, 0, 0.755);
+	border-radius: 2em;
+	box-shadow: 2px 2px 1.5em rgba(0, 0, 0, 0.5);
+}
+
+header {
+	margin-bottom: 2em;
+	text-align: center;
+	max-width: 300px;
+	margin: auto;
+}
+
+h1.nome-mae {
+	font-size: 6em;
+	text-align: center;
+}
+
+ul.lista-maes {
+	max-width: 450px;
+	margin: 1.5em 0;
+}
+
+ul.lista-maes li {
+	list-style: none;
+}
+
+ul.lista-maes li a {
+	color: lightblue;
+}
+
+ul.lista-maes li a::before {
+	content: "🔗";
+}
+
+div.img {
+	text-align: center;
+	margin: 2em 0;
+}
+
+div.img img {
+	margin: 1em;
+	border-radius: 0.5em;
+}
+
+button,
+input[type="submit"] {
+	color: white;
+	padding: 0.5em 0.9em;
+	font-weight: bold;
+	border: none;
+	border-radius: 0.5em;
+	background-color: rgb(47, 82, 255);
+	cursor: pointer;
+}
+
+input[type="text"] {
+	padding: 0.65em 0.65em 0.3em 0.65em;
+	color: white;
+	background-color: transparent;
+	border: none;
+	border-radius: 7px 7px 0px 0px;
+	border-bottom: 2px solid white;
+}
+
+input[type="text"]::placeholder {
+	color: #ccc;
+}
+
+input[type="text"]:focus,
+button:focus,
+input[type="submit"]:focus {
+	outline: none;
+	box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.618);
+}
+
+div.colocar-nome {
+	margin-bottom: 2em;
+}
+
+/* CHAT ONLINE */
+
+div.chat {
+	display: none;
+	padding: 1em;
+	border: 3px solid white;
+	border-radius: 1em;
+}
+
+div.escrever-msg {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+div.escrever-msg input[type="text"] {
+	width: 90%;
+}
+
+div.msgs p {
+	padding: 0.5em 0.8em;
+	margin: 0.2em;
+}
+
+div.container-msg-mae,
+div.container-msg-usu {
+	display: flex;
+	align-items: flex-end;
+}
+
+div.container-msg-usu {
+	justify-content: flex-end;
+}
+
+div.container-msg-mae img {
+	border-radius: 50%;
+	margin-right: 0.3em;
+}
+
+p.msg-mae {
+	border-radius: 1.5em 1.5em 1.5em 0em;
+	background-color: #567;
+}
+
+p.msg-usu {
+	border-radius: 1.5em 1.5em 0em 1.5em;
+	background-color: rgb(93, 169, 93);
+	max-width: 50%;
+}
