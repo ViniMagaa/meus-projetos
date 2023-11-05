@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slides</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <h1>Scroll 1</h1>
+    <div class="slides-container" id="slides-container">
+      <div class="slides-inner">
+        <img id="img-1" src="imgs/1.jpg">
+        <img id="img-2" src="imgs/2.jpeg">
+        <img id="img-3" src="imgs/3.jpg">
+        <img id="img-4" src="imgs/4.png">
+      </div>
+      <button id="btn-left">
+        &triangleleft;
+      </button>
+      <button id="btn-right">
+        &triangleright;
+      </button>
+    </div>
+  </main>
+
+  <script>
+    const slidesContainer = document.getElementById("slides-container")
+    const btnRight = document.getElementById("btn-right")
+    const btnLeft = document.getElementById("btn-left")
+
+    btnRight.addEventListener("click", () => {
+      slidesContainer.scrollBy(420, 0);
+    })
+
+    btnLeft.addEventListener("click", () => {
+      slidesContainer.scrollBy(-420, 0);
+    })
+  </script>
+</body>
+
+</html>
