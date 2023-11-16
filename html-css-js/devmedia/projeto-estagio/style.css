@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+:root {
+  --soft-red: rgb(241, 64, 64);
+  --black: #121212;
+  --gray: #777;
+  --white: #fff;
+  --light-gray: #eee;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: var(--light-gray);
+}
+
+/* Start Header */
+header {
+  width: 100%;
+  height: 90vh;
+  background-image: url(./imagens/london.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: var(--white);
+  box-shadow: 0 0 2rem rgba(0, 10, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+header nav .logo {
+  font-size: 1.5rem;
+  color: var(--soft-red);
+}
+
+header section.travel-the-world {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 2rem;
+  background-color: var(--white);
+  font-size: 1.1rem;
+}
+
+.travel-header {
+  width: 100%;
+  display: flex;
+  background-color: var(--black);
+}
+
+.travel-header div:first-child {
+  background-color: var(--soft-red);
+}
+
+.travel-header .travel-type {
+  color: var(--white);
+  flex-grow: 1;
+  padding: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.travel-header .travel-type:hover {
+  background-color: var(--soft-red);
+}
+
+.travel-form {
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.travel-form-inputs {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.travel-form-inputs>div {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.travel-form-inputs input {
+  width: 100%;
+  font-size: 1.1rem;
+  padding: 0.8rem 0.5rem;
+  outline: none;
+  border: 1px solid var(--light-gray);
+}
+
+.travel-form button {
+  max-width: 200px;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  background-color: var(--gray);
+  color: var(--white);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.travel-form button:hover {
+  opacity: .8;
+}
+
+/* End Header */
+
+/* Start Main */
+main {
+  margin: 2rem auto;
+  padding: 0 1rem;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+main>section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.images-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.grid {
+  display: grid;
+  grid-template: 1fr 1fr / repeat(4, 1fr);
+  gap: 0.8rem;
+}
+
+.grid :first-child {
+  grid-area: 1 / 1 / 3 / 3;
+}
+
+.img-container {
+  position: relative;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.img-container:hover {
+  filter: brightness(70%);
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-describer {
+  color: var(--white);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 1);
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+}
+
+.nature-containers-container {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.nature-container {
+  background-color: var(--white);
+}
+
+.nature-img-container img {
+  width: 100%;
+}
+
+.nature-description {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.value {
+  opacity: 0.8;
+  font-size: 0.8rem;
+}
+
+.nature-description a {
+  margin-left: 1rem;
+  color: var(--gray);
+}
+
+.get-best-offers {
+  padding: 1rem;
+  background-color: var(--gray);
+  color: var(--white);
+}
+
+.get-best-offers form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.get-best-offers form div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.get-best-offers form div input {
+  padding: 0.8rem 0.5rem;
+  outline: none;
+}
+
+.get-best-offers form button {
+  max-width: 100px;
+  padding: 0.5rem;
+  background-color: var(--soft-red);
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: var(--white);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+  filter: brightness(120%);
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact form input {
+  font-size: 1.1rem;
+  padding: 0.8rem 0.5rem;
+  outline: none;
+  border: 1px solid var(--gray);
+}
+
+.contact form button {
+  max-width: 160px;
+  padding: 0.5rem;
+  background-color: var(--black);
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+  color: var(--white);
+  cursor: pointer;
+  transition: 0.3s;
+}
+/* End Main */
+
+/* Start Footer */
+footer {
+  padding: 0 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+footer .social-media-links a {
+  text-decoration: none;
+}
+
+footer .social-media-links a svg {
+  transition: .2s;
+}
+
+footer .social-media-links a:hover svg {
+  transform: scale(1.1);
+}
+
+footer a {
+  color: var(--gray);
+}
+/* End Footer */
+
+/* Start Responsive */
+@media screen and (max-width: 450px) {
+  header {
+    height: auto;
+  }
+
+  header section.travel-the-world {
+    margin-top: 64px;
+    margin-inline: 0;
+    height: 100%;
+  }
+
+  .travel-form-inputs {
+    flex-direction: column;
+  }
+
+  .grid,
+  .nature-containers-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+/* End Responsive */
