@@ -1,15 +1,17 @@
 :root {
-  --background-color: #222;
-  --primary-black: #444;
-  --text-color: #eee;
-  --destaque-1: rgb(160, 10, 160);
+  --background-color: #4C1A57;
+  --primary-black: #ACA885;
+  --secondary-black: #3d004b;
+  --text-color: #333;
+  --destaque-1: #7180B9;
+  --destaque-2: #000000;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Cambria, sans-serif;
 }
 
 body {
@@ -30,6 +32,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  width: 100%;
 }
 
 aside,
@@ -42,13 +45,56 @@ main {
 }
 
 aside {
-  min-width: 295px;
+  min-width: 350px;
 }
 
 aside nav ul {
   list-style-type: none;
   display: flex;
   flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+aside nav ul li,
+aside nav ul li a {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background-color: var(--secondary-black);
+  border-radius: .5rem;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  transition: filter .2s;
+}
+
+aside nav ul li:hover {
+  filter: brightness(150%);
+}
+
+aside .manoel-gomes img {
+  width: 250px;
+  bottom: 0;
+  position: fixed;
+  animation: manoel 5s infinite;
+}
+
+@keyframes manoel {
+  0% {
+    bottom: -100%;
+  }
+
+  50% {
+    bottom: 0;
+  }
+
+  90% {
+    bottom: 0;
+  }
+
+  100% {
+    bottom: -100%;
+  }
 }
 
 header {
@@ -90,22 +136,36 @@ header h1 {
   opacity: 0.8;
 }
 
-.container-categoria-produtos {
-  width: 100%;
-  max-width: 400px;
-  overflow-x: scroll;
-  display: flex;
-  gap: 1.5rem;
-  padding: 1rem;
+.container-categoria {
+  overflow: auto;
+  border: 2px solid var(--secondary-black);
+  border-left: 10px solid var(--destaque-2);
+  border-radius: 0.5rem;
+  margin-top: 1rem;
 }
 
-.container-categoria-produtos::-webkit-scrollbar {
+.container-categoria-produtos {
+  width: clamp(520px, 300px, 800px);
+  display: grid;
+  align-items: center;
+  grid-auto-flow: column;
+  gap: 1rem;
+  padding: 0.8rem;
+}
+
+.container-categoria::-webkit-scrollbar {
   display: none;
 }
 
 .container-produto {
+  background-color: #eae7cd;
   border: 2px solid var(--background-color);
-  min-width: 250px;
+  width: 250px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
   border: none;
   border-radius: 0.5rem;
   overflow: hidden;
@@ -117,8 +177,16 @@ header h1 {
   box-shadow: 0 0 1rem var(--background-color);
 }
 
+.container-produto-img {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .container-produto-img img {
-  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .container-produto-infos {
